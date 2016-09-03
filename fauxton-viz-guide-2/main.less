@@ -1,0 +1,74 @@
+html, body {
+  font-family: "Helvetica";
+  text-align: center;
+  padding: 0;
+  background: #f9f9f9;
+  color: #444;
+  margin: 0;
+  height: 100%
+}
+
+#redsidebar {
+  width: 270px;
+  height: 100%;
+  background-color: #d84d4d;
+  font-weight: 300;
+  color: #f9f9f9;
+  font-size: 12px;
+  overflow: auto;
+
+  .header {
+    padding: 20px 20px 40px 20px;
+
+    font-weight: bold;
+    color: #f9f9f9;
+    vertical-align: middle;
+    font-size: 16px;
+
+    .logo {
+      fill: #9b0038;
+      height: 25px;
+      display: inline;
+      padding-right: 10px;
+      vertical-align: middle;
+    }
+
+    .title {
+      display: inline;
+      vertical-align: middle;
+    }
+
+    .subtitle{
+      color: #750f34;
+      vertical-align: middle;
+    }
+  }
+
+  .section {
+    padding-bottom: 25px;
+  }
+
+  .overview {
+    .clipboard {
+      height: 140px;
+    }
+  }
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+  background: #f9f9f9;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: left 1s, width 1s;
+  -moz-transition: left 1s, width 1s;
+  -o-transition: left 1s, width 1s;
+  transition: left 1s, width 1s;
+
+  &.showSideBar {
+    left: 270px;
+    width: calc(100% - '260px');
+  }
+}
