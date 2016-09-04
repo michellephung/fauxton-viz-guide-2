@@ -6,20 +6,20 @@ div#redsidebar
 
   div.section.getting-started(data-nav="getting-started")
     img.large-icon
-    div GETTING STARTED
+    div.big-nav-subtitle GETTING STARTED
   div.section.using-fauxton(data-nav="using-fauxton")
     img.large-icon
-    div USING FAUXTON
+    div.big-nav-subtitle USING FAUXTON
   div.section.answers(data-nav="answers")
     img.large-icon
-    div ANSWERS
+    div.big-nav-subtitle ANSWERS
 
 div#content.showSideBar
   div#hamburger.showSideBar
     img(src='imgs/hamburger.svg').svg
   div#getting-started.section.shown
     div#middleBar
-      img(src='imgs/clipboard-light.png').topic-image
+      img(src='imgs/getting-started-light.png').topic-image
       div.section-title Getting Started
     div#rightContent
       div.intro-section
@@ -40,19 +40,18 @@ div#content.showSideBar
             img(src='imgs/download-btn.png').download-btn
     
         div 2. Learn how to install and setup CouchDB from 
-          a(href='http://docs.couchdb.org/en/latest/install/index.html') here
-          , then install Fauxton via 
+          a(href='http://docs.couchdb.org/en/latest/install/index.html') here span then install Fauxton via 
           a(href='https://www.npmjs.com/package/fauxton') npm  
 
   div#using-fauxton.section
-    div#middleBar Fauxton
-      div.topic-image Fauxton MiddleBar IMG
-      div.nav Fauxton Navigation
+    div#middleBar
+      img(src='imgs/using-fauxton-light.png').topic-image
+      div.section-title Using Fauxton
     div#rightContent Fauxton RightContent
   div#answers.section
-    div#middleBar Answers
-      div.topic-image Answers MiddleBar IMG
-      div.nav Answers Navigation
+    div#middleBar 
+      img(src='imgs/answers-light.png').topic-image
+      div.section-title Answers
     div#rightContent Answers RightContent
   
     

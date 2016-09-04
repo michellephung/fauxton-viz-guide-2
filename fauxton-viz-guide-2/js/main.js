@@ -18,19 +18,23 @@ function toggleSidebar() {
 function clickSidebarItemListener () {
   $('#redsidebar .section').click(function () {
 
-    hideAll();
+    clearAll();
     var sectionChosen = $(this).data('nav');
-
+    console.log(sectionChosen);
     $('#' + sectionChosen).addClass('shown');
-
-    console.log('.' + sectionChosen);
+    $('.' + sectionChosen + ' .big-nav-subtitle').css('color', '#750f34');
+    $('.section.' + sectionChosen)
+      .css('background-image', 'url("imgs/'+ sectionChosen +'-dark.png")');
   });
 
 
-  function hideAll () {
+  function clearAll () {
     $('#getting-started').removeClass('shown');
     $('#using-fauxton').removeClass('shown');
     $('#answers').removeClass('shown');
+    $('.big-nav-subtitle').css('color', '');
+    $('.getting-started, .using-fauxton, .answers')
+      .css('background-image', '');
   }
 }
 

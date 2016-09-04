@@ -36,6 +36,7 @@ html, body {
     .title {
       display: inline;
       vertical-align: middle;
+      cursor: pointer;
     }
 
     .subtitle{
@@ -55,18 +56,19 @@ html, body {
     }
     
     &.getting-started  {
-      background-image: url('imgs/clipboard-light.png');
+      background-image: url('imgs/getting-started-light.png');
 
       &:hover {
-        background-image: url('imgs/clipboard-dark.png');
+        background-image: url('imgs/getting-started-dark.png');
       }
     }
 
     &.using-fauxton {
-      background-image: url('imgs/fauxton-light.png');
+      cursor: pointer;
+      background-image: url('imgs/using-fauxton-light.png');
 
       &:hover {
-        background-image: url('imgs/fauxton-dark.png');
+        background-image: url('imgs/using-fauxton-dark.png');
       }
     }
 
@@ -76,6 +78,11 @@ html, body {
       &:hover {
         background-image: url('imgs/answers-dark.png');
       }
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #750f34;
     }
   }
 }
@@ -105,6 +112,7 @@ html, body {
     position: fixed;
     top: 5px;
     left: 270px;
+    cursor: pointer;
 
     -webkit-transition: left 0.5s, width 0.5s;
     -moz-transition: left 0.5s, width 0.5s;
@@ -129,7 +137,7 @@ html, body {
 }
 
 #middleBar {
-  width: 310px;
+  width: 200px;
   margin-left: 65px;
   margin-top: 70px;
 
@@ -145,9 +153,10 @@ html, body {
 #rightContent {
   margin-top: 70px;
   position: absolute;
-  width: calc(100% ~"-" 420px);
-  min-width: 500px;
-  left: 380px;
+  width: calc(100% ~"-" 320px);
+  min-width: 400px;
+  max-width: 625px; 
+  left: 280px;
   top: 0px;
   font-weight: 300;
   text-align: left;
