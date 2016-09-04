@@ -1,29 +1,44 @@
 //main.js
 $(document).ready(function(){
     replaceSVGs();
-
     toggleSidebar();
+    clickSidebarItemListener();
 
 });
 
 
 
 function toggleSidebar() {
-  $('#hamburger').click(function () {
-    console.log("x");
+  $('#hamburger, #redsidebar .header').click(function () {
     $('#content').toggleClass('showSideBar');
     $('#hamburger svg').toggleClass('showSideBar');
   });
 }
 
-function replaceSVGs () {
-  
-  /*
-  * Replace all SVG images with inline SVG
-  */
-  
-  //http://stackoverflow.com/questions/11978995/how-to-change-color-of-svg-image-using-css-jquery-svg-image-replacement
+function clickSidebarItemListener () {
+  $('#redsidebar .section').click(function () {
 
+    hideAll();
+    var sectionChosen = $(this).data('nav');
+
+    $('#' + sectionChosen).addClass('shown');
+
+    console.log('.' + sectionChosen);
+  });
+
+
+  function hideAll () {
+    $('#getting-started').removeClass('shown');
+    $('#using-fauxton').removeClass('shown');
+    $('#answers').removeClass('shown');
+  }
+}
+
+/*
+ * Replace all SVG images with inline SVG
+ * from http://stackoverflow.com/questions/11978995/how-to-change-color-of-svg-image-using-css-jquery-svg-image-replacement
+ */
+function replaceSVGs () {
   jQuery('img.svg').each(function(){
     var $img = jQuery(this);
     var imgID = $img.attr('id');
