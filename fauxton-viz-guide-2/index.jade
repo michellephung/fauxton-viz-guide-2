@@ -54,13 +54,19 @@ div#content.showSideBar
             i(aria-hidden="true").fa.fa-database
             div.line
           div
+            i(aria-hidden="true").fa.fa-wrench
+            div.line
+          div
             i(aria-hidden="true").fa.fa-tasks
+            div.line
+          div
+            i(aria-hidden="true").fa.fa-cog
             div.line
           div
             img(src='imgs/replicate.svg').svg.replicate-icon 
             div.line
           div
-            i(aria-hidden="true").fa.fa-wrench
+            img(src='imgs/bookmark.svg').svg.user-icon 
             div.line
           div
             img(src='imgs/user.svg').svg.user-icon 
@@ -69,8 +75,12 @@ div#content.showSideBar
             i(aria-hidden="true").fa.fa-check-circle
             
         div.toc
-          div.heading#toc1.selected 
-            div.heading-title 
+          div.heading#toc0.selected 
+            a(href="#intro").heading-title 
+              span.number 00
+              span.heading-text
+          div.heading#toc1 
+            a(href="#_all_dbs").heading-title 
               span.number 01 // 
               span.heading-text ALL DATABASES
             div.subheading ADD A NEW DATABASE
@@ -78,39 +88,54 @@ div#content.showSideBar
             div.subheading VIEW A DATABASE
             div.subheading ACTIONS
           div.heading 
-            div.heading-title 
+            a(href="#setup").heading-title 
               span.number 02 // 
-              span.heading-text SINGLE DATABASES
+              span.heading-text SETUP
           div.heading 
-            div.heading-title 
+            a(href="#_activetasks").heading-title 
               span.number 03 // 
-              span.heading-text ALL ACTIVE TASKS
+              span.heading-text ACTIVE TASKS
           div.heading 
-            div.heading-title 
+            a(href="#_config").heading-title 
               span.number 04 // 
-              span.heading-text SOURCE DATABASE
+              span.heading-text CONFIGURATION
           div.heading 
-            div.heading-title 
+            a(href="#replication").heading-title 
               span.number 05 // 
-              span.heading-text TARGET DATABASE
+              span.heading-text REPLICATION
           div.heading  
-            div.heading-title 
+            a(href="#documentation").heading-title 
               span.number 06 // 
-              span.heading-text MAIN CONFIG
+              span.heading-text DOCUMENTATION 
           div.heading 
-            div.heading-title 
+            a(href="#login").heading-title 
               span.number 07 // 
-              span.heading-text CORS
+              span.heading-text LOGIN / ADMIN
           div.heading 
-            div.heading-title 
+            a(href="#verifyinstall").heading-title 
               span.number 08 // 
-              span.heading-text ADMINS
-          div.heading 
-            div.heading-title 
-              span.number 09 // 
-              span.heading-text INSTALLATION
+              span.heading-text VERIFY
 
-    div#rightContent Fauxton RightContent
+    div#rightContent
+      div.title#intro INTRODUCTION
+        div Overview Overview Overview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview Overview
+      div.title#_all_dbs All Databases
+        div  All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases
+      div.title#setup Setup
+        div   Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup
+      div.title#_activetasks All Active Tasks
+         div All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks
+      div.title#_config Main Configuration
+        div  Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration
+      div.title#replication Replication
+        div  Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication
+      div.title#documentation DOCUMENTATION 
+        div DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION 
+      div.title#login Login/User Management
+         div Login/User Management  Login/User Management  Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management
+      div.title#verifyinstall Verify
+        div  Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify
+
   div#answers.section
     div#middleBar 
       img(src='imgs/answers-light.png').topic-image

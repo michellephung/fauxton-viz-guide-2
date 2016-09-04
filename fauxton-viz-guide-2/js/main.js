@@ -3,7 +3,7 @@ $(document).ready(function(){
     replaceSVGs();
     toggleSidebar();
     clickSidebarItemListener();
-
+    usingFauxtonNavigationListener();
 });
 
 
@@ -17,12 +17,15 @@ function toggleSidebar() {
 
 function clickSidebarItemListener () {
   $('#redsidebar .section').click(function () {
-
     clearAll();
     var sectionChosen = $(this).data('nav');
     console.log(sectionChosen);
     $('#' + sectionChosen).addClass('shown');
-    $('.' + sectionChosen + ' .big-nav-subtitle').css('color', '#750f34');
+    $('.' + sectionChosen + ' .big-nav-subtitle')
+      .css({
+        'color': '#750f34',
+        'font-weight': 'bold'
+      });
     $('.section.' + sectionChosen)
       .css('background-image', 'url("imgs/'+ sectionChosen +'-dark.png")');
   });
@@ -32,10 +35,20 @@ function clickSidebarItemListener () {
     $('#getting-started').removeClass('shown');
     $('#using-fauxton').removeClass('shown');
     $('#answers').removeClass('shown');
-    $('.big-nav-subtitle').css('color', '');
+    $('.big-nav-subtitle')
+      .css({
+        'color': '',
+        'font-weight': ''
+      });
     $('.getting-started, .using-fauxton, .answers')
       .css('background-image', '');
   }
+}
+
+function usingFauxtonNavigationListener () {
+  $('#redsidebar .section').click(function () {
+
+  });
 }
 
 /*
