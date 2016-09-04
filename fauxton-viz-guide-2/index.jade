@@ -4,15 +4,52 @@ div#redsidebar
     span.title Fauxton
       span.subtitle  Visual Guide
 
-  div.section.overview 
-    img(src='imgs/clipboard.png').clipboard
-    div OVERVIEW
-  div.section.basics
-    img(src='imgs/basics-large-icon.png').clipboard
-    div FAUXTON BASICS
-  div.section.documentation
-    img(src='imgs/docs-large-icon.png').clipboard
+  div.section.getting-started 
+    img.large-icon
+    div GETTING STARTED
+  div.section.using-fauxton
+    img.large-icon
+    div USING FAUXTON
+  div.section.answers
+    img.large-icon
     div ANSWERS
 
 div#content.showSideBar
-  div.hello
+  div#hamburger.showSideBar
+    img(src='imgs/hamburger.svg').svg
+  div#getting-started.section.shown
+    div#middleBar
+      img(src='imgs/clipboard-light.png').topic-image
+      div.section-title Getting Started
+    div#rightContent
+      div.intro-section
+        h1 Welcome to Fauxton.
+        
+        div Apache CouchDB is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
+
+        div Fauxton is a native web-based interface built into CouchDB. It provides a basic interface to the majority of the functionality, including the ability to create, update, delete and view documents and design documents. It provides access to the configuration parameters, and an interface for initiating replication.
+      div.intro-section
+        h1 Getting Started
+        h2 Download
+        div.dl-space Start by downloading the CouchDB suite:
+
+        div 1. Go to 
+          a(href='https://couchdb.apache.org/') couchdb.apache.org
+          span  and in the middle-right on header, and click 
+          a(href='https://couchdb.apache.org/#download')
+            img(src='imgs/download-btn.png').download-btn
+    
+        div 2. Learn how to Install and setup Couchdb from here. Or you can install via npm.
+
+  div#fauxton.section
+    div#middleBar Fauxton
+      div.topic-image Fauxton MiddleBar IMG
+      div.nav Fauxton Navigation
+    div#rightContent Fauxton RightContent
+  div#answers.section
+    div#middleBar Answers
+      div.topic-image Answers MiddleBar IMG
+      div.nav Answers Navigation
+    div#rightContent Answers RightContent
+  
+    

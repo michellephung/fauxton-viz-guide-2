@@ -9,8 +9,10 @@ $(document).ready(function(){
 
 
 function toggleSidebar() {
-  $('body').click(function () {
+  $('#hamburger').click(function () {
+    console.log("x");
     $('#content').toggleClass('showSideBar');
+    $('#hamburger svg').toggleClass('showSideBar');
   });
 }
 

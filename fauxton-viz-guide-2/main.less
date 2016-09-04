@@ -45,12 +45,25 @@ html, body {
   }
 
   .section {
-    padding-bottom: 25px;
-  }
+    background-repeat:no-repeat;
+    background-position: center;
+    padding-bottom: 20px;
 
-  .overview {
-    .clipboard {
+    img.large-icon {
       height: 140px;
+      padding-bottom: 40px;
+    }
+    
+    &.getting-started  {
+      background-image: url('imgs/clipboard-light.png');
+    }
+
+    &.using-fauxton {
+      background-image: url('imgs/fauxton-light.png');
+    }
+
+    &.answers {
+      background-image: url('imgs/answers-light.png');
     }
   }
 }
@@ -62,13 +75,95 @@ html, body {
   position: fixed;
   top: 0px;
   left: 0px;
-  -webkit-transition: left 1s, width 1s;
-  -moz-transition: left 1s, width 1s;
-  -o-transition: left 1s, width 1s;
-  transition: left 1s, width 1s;
+  -webkit-transition: left 0.5s, width 0.5s;
+  -moz-transition: left 0.5s, width 0.5s;
+  -o-transition: left 0.5s, width 0.5s;
+  transition: left 0.5s, width 0.5s;
+  overflow: auto;
 
   &.showSideBar {
     left: 270px;
-    width: calc(100% - '260px');
+    width: calc(100% ~"-" 260px);
+  }
+
+  #hamburger svg {
+    height: 25px;
+    width: 25px;
+    padding: 15px;
+    position: fixed;
+    top: 5px;
+    left: 270px;
+
+    -webkit-transition: left 0.5s, width 0.5s;
+    -moz-transition: left 0.5s, width 0.5s;
+    -o-transition: left 0.5s, width 0.5s;
+    transition: left 0.5s, width 0.5s;
+
+    &.showSideBar {
+      left: 0px;
+    }
+
+    line {
+      stroke: #750f34;
+    }
+  }
+
+  .section {
+    display: none;
+  }
+  .shown {
+    display: inline;
+  }
+}
+
+#middleBar {
+  width: 310px;
+  margin-left: 65px;
+  margin-top: 100px;
+
+  .topic-image {
+    height: 120px;
+  }
+  .section-title {
+    font-weight: 300;
+    color: #750f34;
+  }
+}
+
+#rightContent {
+  margin-top: 100px;
+  position: absolute;
+  width: calc(100% ~"-" 420px);
+  min-width: 500px;
+  left: 380px;
+  top: 0px;
+  font-weight: 300;
+  text-align: left;
+  margin-right: 30px;
+  padding-right: 30px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+    padding-bottom: 20px;
+    &::before {
+      content: url('imgs/diamond.png');
+      margin-right: 10px;
+    }
+  }
+
+  div, h2 {
+    margin-left: 25px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .intro-section , .dl-space{
+    padding-bottom: 40px;
+  }
+
+  .download-btn {
+    width: 200px;
+    vertical-align: middle;
   }
 }
