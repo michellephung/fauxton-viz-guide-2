@@ -47,23 +47,35 @@ html, body {
   .section {
     background-repeat:no-repeat;
     background-position: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     img.large-icon {
       height: 140px;
-      padding-bottom: 40px;
+      padding-bottom: 15px;
     }
     
     &.getting-started  {
       background-image: url('imgs/clipboard-light.png');
+
+      &:hover {
+        background-image: url('imgs/clipboard-dark.png');
+      }
     }
 
     &.using-fauxton {
       background-image: url('imgs/fauxton-light.png');
+
+      &:hover {
+        background-image: url('imgs/fauxton-dark.png');
+      }
     }
 
     &.answers {
       background-image: url('imgs/answers-light.png');
+
+      &:hover {
+        background-image: url('imgs/answers-dark.png');
+      }
     }
   }
 }
@@ -119,7 +131,7 @@ html, body {
 #middleBar {
   width: 310px;
   margin-left: 65px;
-  margin-top: 100px;
+  margin-top: 70px;
 
   .topic-image {
     height: 120px;
@@ -131,7 +143,7 @@ html, body {
 }
 
 #rightContent {
-  margin-top: 100px;
+  margin-top: 70px;
   position: absolute;
   width: calc(100% ~"-" 420px);
   min-width: 500px;
