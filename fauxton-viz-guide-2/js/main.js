@@ -11,7 +11,7 @@ $(document).ready(function(){
 function toggleSidebar() {
   $('#hamburger, #redsidebar .header').click(function () {
     $('#content').toggleClass('showSideBar');
-    $('#hamburger svg').toggleClass('showSideBar');
+    $('#hamburger').toggleClass('showSideBar');
   });
 }
 

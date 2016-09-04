@@ -105,14 +105,18 @@ html, body {
     width: calc(100% ~"-" 260px);
   }
 
-  #hamburger svg {
+  #hamburger {
     height: 25px;
-    width: 25px;
+    width: 100%;
+    text-align: left;
     padding: 15px;
     position: fixed;
     top: 5px;
-    left: 270px;
+    left: 0px;
     cursor: pointer;
+    color: #750f34;
+    font-size: 20px;
+
 
     -webkit-transition: left 0.5s, width 0.5s;
     -moz-transition: left 0.5s, width 0.5s;
@@ -120,11 +124,7 @@ html, body {
     transition: left 0.5s, width 0.5s;
 
     &.showSideBar {
-      left: 0px;
-    }
-
-    line {
-      stroke: #750f34;
+      left: 275px;
     }
   }
 
@@ -137,9 +137,9 @@ html, body {
 }
 
 #middleBar {
-  width: 200px;
-  margin-left: 65px;
-  margin-top: 70px;
+  width: 230px;
+  margin-left: 50px;
+  margin-top: 50px;
 
   .topic-image {
     height: 120px;
@@ -151,9 +151,9 @@ html, body {
 }
 
 #rightContent {
-  margin-top: 70px;
+  margin-top: 50px;
   position: absolute;
-  width: calc(100% ~"-" 320px);
+  width: calc(100% ~"-" 430px);
   min-width: 400px;
   max-width: 625px; 
   left: 280px;
@@ -162,6 +162,7 @@ html, body {
   text-align: left;
   margin-right: 30px;
   padding-right: 30px;
+  padding-left: 20px;
 
   h1 {
     font-size: 24px;
@@ -186,5 +187,100 @@ html, body {
   .download-btn {
     width: 200px;
     vertical-align: middle;
+  }
+}
+
+.fauxton-toc {
+  margin-top: 40px;
+
+  .icon-menu {
+    width: 50px;
+    height: 100%;
+    float: left;
+    font-size: 20px;
+    color: #b3b3b3;
+
+    > div i:hover, > div img:hover {
+      cursor: pointer;
+      color: black;
+    }
+
+    .replicate-icon, .user-icon {
+      width: 22px;
+
+      &:hover {
+        path {
+          fill: black;
+        }
+      }
+      path {
+        fill: #b3b3b3;
+      }
+    }
+
+    .line {
+      width: 50%;
+      border-right: 1px dotted black;
+      height: 20px;
+      margin: 5px 0 5px 0;
+    }
+  }
+
+  .toc {
+    float: right;
+    font-weight: 400;
+    text-align: left;
+    color: #b3b3b3;
+    width: 165px;
+    cursor: pointer;
+
+    .heading {
+      padding-bottom: 12px;
+      padding-left: 15px;
+      font-size: 12px;
+
+      &:hover {
+        font-weight: bold;
+        color: black;
+        .subheading {
+          font-weight: normal;
+        }
+      }
+
+      .subheading {
+        line-height: 17px;
+        font-size: 10px;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+    
+
+
+    .selected {
+      color: black;
+      
+      &.heading {
+        padding-left: 0px;
+      }
+      .heading-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding-left: 15px;
+        border-left: 2px solid red;
+        .number {
+          font-size: 18px;
+        }
+
+        .heading-text {
+          font-size: 12px;
+        }
+      }
+
+      .subheading {
+        padding-left: 15px;
+      }
+    }
   }
 }

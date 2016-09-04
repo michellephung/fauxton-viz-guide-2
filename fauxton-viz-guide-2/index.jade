@@ -16,11 +16,11 @@ div#redsidebar
 
 div#content.showSideBar
   div#hamburger.showSideBar
-    img(src='imgs/hamburger.svg').svg
+    i(aria-hidden="true").fa.fa-bars
   div#getting-started.section.shown
     div#middleBar
       img(src='imgs/getting-started-light.png').topic-image
-      div.section-title Getting Started
+      div.section-title GETTING STARTED
     div#rightContent
       div.intro-section
         h1 Welcome to Fauxton.
@@ -47,7 +47,69 @@ div#content.showSideBar
   div#using-fauxton.section
     div#middleBar
       img(src='imgs/using-fauxton-light.png').topic-image
-      div.section-title Using Fauxton
+      div.section-title USING FAUXTON
+      div.fauxton-toc
+        div.icon-menu
+          div
+            i(aria-hidden="true").fa.fa-database
+            div.line
+          div
+            i(aria-hidden="true").fa.fa-tasks
+            div.line
+          div
+            img(src='imgs/replicate.svg').svg.replicate-icon 
+            div.line
+          div
+            i(aria-hidden="true").fa.fa-wrench
+            div.line
+          div
+            img(src='imgs/user.svg').svg.user-icon 
+            div.line
+          div
+            i(aria-hidden="true").fa.fa-check-circle
+            
+        div.toc
+          div.heading#toc1.selected 
+            div.heading-title 
+              span.number 01 // 
+              span.heading-text ALL DATABASES
+            div.subheading ADD A NEW DATABASE
+            div.subheading SEARCH FOR A DATABASE
+            div.subheading VIEW A DATABASE
+            div.subheading ACTIONS
+          div.heading 
+            div.heading-title 
+              span.number 02 // 
+              span.heading-text SINGLE DATABASES
+          div.heading 
+            div.heading-title 
+              span.number 03 // 
+              span.heading-text ALL ACTIVE TASKS
+          div.heading 
+            div.heading-title 
+              span.number 04 // 
+              span.heading-text SOURCE DATABASE
+          div.heading 
+            div.heading-title 
+              span.number 05 // 
+              span.heading-text TARGET DATABASE
+          div.heading  
+            div.heading-title 
+              span.number 06 // 
+              span.heading-text MAIN CONFIG
+          div.heading 
+            div.heading-title 
+              span.number 07 // 
+              span.heading-text CORS
+          div.heading 
+            div.heading-title 
+              span.number 08 // 
+              span.heading-text ADMINS
+          div.heading 
+            div.heading-title 
+              span.number 09 // 
+              span.heading-text INSTALLATION
+
     div#rightContent Fauxton RightContent
   div#answers.section
     div#middleBar 
