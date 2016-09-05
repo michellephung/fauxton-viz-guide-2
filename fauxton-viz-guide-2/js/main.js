@@ -4,9 +4,29 @@ $(document).ready(function(){
     toggleSidebar();
     clickSidebarItemListener();
     usingFauxtonNavigationListener();
+    onLoadJumpToAnchor();
 });
 
+function onLoadJumpToAnchor () {
+  var hash = window.location.hash;
 
+  switch (hash) {
+    case '' : 
+      $('#redsidebar .getting-started').click();
+      break;
+    case '#getting-started' : 
+      $('#redsidebar .getting-started').click();
+      break;
+    case '#answers' :
+      $('#redsidebar .answers').click();
+      break;
+    default: 
+      $('#redsidebar .using-fauxton').click();
+      if (location.hash) {
+        location.href = location.hash;
+      }
+  }
+}
 
 function toggleSidebar() {
   $('#hamburger, #redsidebar .header').click(function () {
