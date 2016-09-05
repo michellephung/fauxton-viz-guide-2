@@ -28,7 +28,7 @@ function clickSidebarItemListener () {
         'color': '#750f34',
         'font-weight': 'bold'
       });
-    $('.section.' + sectionChosen)
+    $('.section.' + sectionChosen + ' .large-icon')
       .css('background-image', 'url("imgs/'+ sectionChosen +'-dark.png")');
   });
 
@@ -42,7 +42,7 @@ function clickSidebarItemListener () {
         'color': '',
         'font-weight': ''
       });
-    $('.getting-started, .using-fauxton, .answers')
+    $('.getting-started .large-icon, .using-fauxton .large-icon, .answers .large-icon')
       .css('background-image', '');
   }
 }

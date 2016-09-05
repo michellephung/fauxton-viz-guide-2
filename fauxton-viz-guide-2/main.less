@@ -5,16 +5,22 @@ html, body {
   background: #f9f9f9;
   color: #444;
   margin: 0;
-  height: 100%
+  height: 100%;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 #redsidebar {
   width: 270px;
   height: 100%;
   background-color: #d84d4d;
-  font-weight: 300;
-  color: #f9f9f9;
-  font-size: 12px;
+
   overflow: auto;
 
   .header {
@@ -45,25 +51,37 @@ html, body {
     }
   }
 
-  .section {
-    background-repeat:no-repeat;
+  a.section {
+    background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 300;
+    color: #f9f9f9;
+    font-size: 12px;
+    text-decoration: none;
 
-    img.large-icon {
-      height: 140px;
-      padding-bottom: 15px;
+    &:hover {
+      cursor: pointer;
+      color: #750f34;
     }
-    
-    &.getting-started  {
+
+    .large-icon {
+      height: 150px;
+      width: 150px;
+      background-repeat: no-repeat;
+      margin: auto;
+    }
+
+    &.getting-started .large-icon {
       background-image: url('imgs/getting-started-light.png');
 
       &:hover {
         background-image: url('imgs/getting-started-dark.png');
       }
     }
-
-    &.using-fauxton {
+    
+    &.using-fauxton .large-icon {
       cursor: pointer;
       background-image: url('imgs/using-fauxton-light.png');
 
@@ -72,17 +90,12 @@ html, body {
       }
     }
 
-    &.answers {
+    &.answers .large-icon {
       background-image: url('imgs/answers-light.png');
 
       &:hover {
         background-image: url('imgs/answers-dark.png');
       }
-    }
-
-    &:hover {
-      cursor: pointer;
-      color: #750f34;
     }
   }
 }
@@ -155,6 +168,14 @@ html, body {
 }
 
 #rightContent {
+
+  -webkit-touch-callout: text; /* iOS Safari */
+  -webkit-user-select: text;   /* Chrome/Safari/Opera */
+  -khtml-user-select: text;    /* Konqueror */
+  -moz-user-select: text;      /* Firefox */
+  -ms-user-select: text;       /* Internet Explorer/Edge */
+  user-select: text;           /* Non-prefixed version, currently
+                                  not supported by any browser */
   margin-top: 50px;
   position: absolute;
   width: calc(100% ~"-" 430px);
@@ -195,7 +216,8 @@ html, body {
 }
 #using-fauxton {
   #rightContent {
-    padding-bottom: 40%;
+    padding-bottom: 50%;
+
     .title {
       padding: 75px 0 0 0;
     }
@@ -263,7 +285,7 @@ html, body {
 
     .heading {
       display: block;
-      margin-left: 12px;
+      margin-left: 5px;
       margin-bottom: 15px;
       font-size: 12px;
       
