@@ -111,7 +111,8 @@ html, body {
   -moz-transition: left 0.5s, width 0.5s;
   -o-transition: left 0.5s, width 0.5s;
   transition: left 0.5s, width 0.5s;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &.showSideBar {
     left: 270px;
@@ -189,6 +190,10 @@ html, body {
   padding-right: 30px;
   padding-left: 20px;
 
+  .box {
+    overflow-x: auto;
+  }
+
   h1 {
     font-size: 24px;
     font-weight: normal;
@@ -203,6 +208,7 @@ html, body {
   div, h2, p {
     margin-left: 25px;
     margin-top: 15px;
+    margin: 15px 25px;
     font-size: 16px;
   }
 
@@ -217,7 +223,7 @@ html, body {
 }
 #using-fauxton {
   #rightContent {
-    padding-bottom: 50%;
+    padding-bottom: 80%;
 
     .chapter {
       padding: 75px 0 0 0;
@@ -229,7 +235,6 @@ html, body {
         &:hover{
           color: darkgray;
         }
-
       }
     }
   }
@@ -355,4 +360,16 @@ html, body {
   }
 }
 
+#answers {
+  .question {
+    font-weight: bold;
+  }
 
+  a {
+    color: black;
+        
+    &:hover{
+      color: darkgray;
+    }
+  }
+}

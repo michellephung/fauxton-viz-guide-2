@@ -1,14 +1,17 @@
 //main.js
+
 $(document).ready(function(){
-    replaceSVGs();
-    toggleSidebar();
-    clickSidebarItemListener();
-    usingFauxtonNavigationListener();
-    onLoadJumpToAnchor();
-    detectHashChange();
+  replaceSVGs();
+  toggleSidebar();
+  clickSidebarItemListener();
+  usingFauxtonNavigationListener();
+  jumpToAnchor();
+  detectHashChange();
+//  changeHashOnScroll();
 });
 
-function onLoadJumpToAnchor () {
+function jumpToAnchor () {
+
   var hash = window.location.hash;
 
   switch (hash) {
@@ -26,11 +29,51 @@ function onLoadJumpToAnchor () {
       if (location.hash) {
         location.href = location.hash;
       }
-  } 
+      highlightFauxtonNavigation();
+  }
+
+  function highlightFauxtonNavigation () {
+    clearAll();
+    var address = hash.substring(1);
+    var end = address.slice(-1);
+
+    if (end === '_') address = address.substring(0, address.length - 1);
+
+    $('#toc-' + address).addClass('selected');
+    $('.icon-menu-'+ address).addClass('selected');
+
+    function clearAll () {
+      $('.toc .heading, .fauxton-toc .icon-menu a').each(function () {
+        $(this).removeClass('selected');
+      });
+    }
+  }
 }
+
+function changeHashOnScroll() {
+  // http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
+  // $('#content').scroll(function (e) {
+  //   $('div.chapter').each(function () {
+  //       if (
+  //         $(this).offset().top < window.pageYOffset + 10
+  //         //begins before top
+  //         && $(this).offset().top + $(this).height() > window.pageYOffset + 10
+  //         //but ends in visible area
+  //         //+ 10 allows you to change hash before it hits the top border
+  //       ){
+
+  //         //hacky way to get smooth scrolling without losing anchor usability  :(
+  //         window.location.hash = $(this).attr('id') + '_';
+  //       }
+  //   });
+  // });
+}
+
 function detectHashChange () {
+  // this is if you click the back button on the browser
+
   $(window).on('hashchange', function() {
-    onLoadJumpToAnchor();
+    jumpToAnchor();
   });
 }
 
@@ -78,7 +121,7 @@ function clickSidebarItemListener () {
 }
 
 function usingFauxtonNavigationListener () {
-  $('#using-fauxton .toc a, .fauxton-toc .icon-menu a').click(function () {
+  $('#using-fauxton .toc a, .fauxton-toc .icon-menu a').click(function (e) {
     clearAll();
     var href = $(this).attr('href');
     var address = href.substring(1);

@@ -3,13 +3,13 @@ div#redsidebar
     img(src='imgs/CouchDB-SVG.svg').logo.svg 
     span.title Fauxton
       span.subtitle  Visual Guide
-  a(href="#getting-started").section.getting-started(data-nav="getting-started")
+  a(href="#getting-started" data-nav="getting-started").section.getting-started
     div.large-icon
     div.big-nav-subtitle GETTING STARTED
-  a(href="#using-fauxton").section.using-fauxton(data-nav="using-fauxton")
+  a(href="#using-fauxton" data-nav="using-fauxton").section.using-fauxton
     div.large-icon
     div.big-nav-subtitle USING FAUXTON
-  a(href="#answers").section.answers(data-nav="answers")
+  a(href="#answers" data-nav="answers").section.answers
     div.large-icon
     div.big-nav-subtitle ANSWERS
 
@@ -123,172 +123,238 @@ div#content.showSideBar
               span.heading-text VERIFY
 
     div#rightContent
-     div.chapter#intro 
-        :markdown
-          # INTRODUCTION 
-          ## Features Overview
+      div.box
+        div.chapter#intro 
+          :markdown
+            # INTRODUCTION 
+            ## Features Overview
 
-          When you first start to use Fauxton, the left most navigation panel
-          will allow you jump quickly between viewing different parts of what's
-          going on in your CouchDB instance.
+            When you first start to use Fauxton, the left most navigation panel
+            will allow you jump quickly between viewing different parts of what's
+            going on in your CouchDB instance.
 
-          You can expand or collapse the navigation by clicking on the area 
-          above the topmost tab, "Databases", where the icon of the three
-          horizontal lines is.
+            You can expand or collapse the navigation by clicking on the area 
+            above the topmost tab, "Databases", where the icon of the three
+            horizontal lines is.
 
-          [Databases](#_all_dbs) will show you a list of all your databases,
-          their size, number of documents, and provides quick links to it's
-          permissions page and replication page.
+            [Databases](#_all_dbs) will show you a list of all your databases,
+            their size, number of documents, and provides quick links to it's
+            permissions page and replication page.
 
-          [Active Tasks](#_activetasks) displays a list of the running
-          background tasks on the server. Background tasks include view index
-          building, compaction and replication. This page is an interface to
-          the [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
-          call.
+            [Setup](#setup) is a wizard to set up and configure CouchDB clusters or a single node.
 
-          [Config](#_config) is an interface for the configuration of your
-          CouchDB installation. The interface allows you to edit different
-          configurable parameters. For more details on configuration, see
-          [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config).
+            [Active Tasks](#_activetasks) displays a list of the running
+            background tasks on the server. Background tasks include view index
+            building, compaction and replication. This page is an interface to
+            the [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
+            call.
 
-          [Replication](#replication) is an interface to the replication
-          system, enabling you to initiate replication between local and remote
-          databases.
+            [Config](#_config) is an interface for the configuration of your
+            CouchDB installation. The interface allows you to edit different
+            configurable parameters. For more details on configuration, see
+            [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config).
 
-          [Documentation](http://docs.couchdb.org/en/latest/)
-          will direct you to your local copy of the documentation. The link 
-          shown in this guide is to the online version.
+            [Replication](#replication) is an interface to the replication
+            system, enabling you to initiate replication between local and remote
+            databases.
 
-          [Login/User Management](#login) lets you can change your password,
-          or add administrator to your CouchDB instance.
+            [Documentation](http://docs.couchdb.org/en/latest/)
+            will direct you to your local copy of the documentation. The link 
+            shown in this guide is to the online version.
 
-          [Verify](#verifyinstall) verifies your installation and allows you to
-          check whether all of the components of your CouchDB installation are
-          correctly installed.
-      
-      div.chapter#_all_dbs
-        :markdown
-          # All Databases
-          ** 1 Add a new Database **
-          Click this button on the top bar, and
-          enter the name of the database you want to create.
+            [Login/User Management](#login) lets you can change your password,
+            or add administrator to your CouchDB instance.
 
-          ** 2 Search for a Database **
-          This text field auto-completes and jumps directly to a specified
-          database.
+            [Verify](#verifyinstall) verifies your installation and allows you to
+            check whether all of the components of your CouchDB installation are
+            correctly installed.
+        
+        div.chapter#_all_dbs
+          :markdown
+            # All Databases
+            ** 1 Add a new Database **
+            Click this button on the top bar, and
+            enter the name of the database you want to create.
 
-          ** 3 View a Database  **
-          This link will take to that database's "[All Docs](#page-all-docs)"
-          page where you can view all of that database's contents. You can also
-          delete, replicate, and change the permissions for a database from the
-          database's 'All Docs' page.
+            ** 2 Search for a Database **
+            This text field auto-completes and jumps directly to a specified
+            database.
 
-          ** 4 Replication Link **
-          Jump directly to the Replication page for this database.
+            ** 3 View a Database  **
+            This link will take to that database's "[All Docs](#_all_docs)"
+            page where you can view all of that database's contents. You can also
+            delete, replicate, and change the permissions for a database from the
+            database's 'All Docs' page.
 
-          ** 5 Permissions Link  **
-          Jump directly to the Permissions page for this database.
+            ** 4 Replication Link **
+            Jump directly to the Replication page for this database.
 
-      div.chapter#setup
-        :markdown
-          # Setup
+            ** 5 Permissions Link  **
+            Jump directly to the Permissions page for this database.
 
-      div.chapter#_activetasks
-        :markdown
-          # Active Tasks
+        div.chapter#setup
+          :markdown
+            # Setup
 
-          ** 1 Change Polling Interval  **
-          The status of each task can change as you are watching the Active 
-          Tasks page. The page auto-updates, but polls at regular intervals. You
-          can set the amount of time that the page updates itself by dragging on
-          this bar.
+        div.chapter#_activetasks
+          :markdown
+            # Active Tasks
 
-          ** 2 API URL  **
-          This page is an interface to the
-          [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
-          call. You can view or copy the raw JSON by clicking on this button.
+            ** 1 Change Polling Interval  **
+            The status of each task can change as you are watching the Active 
+            Tasks page. The page auto-updates, but polls at regular intervals. You
+            can set the amount of time that the page updates itself by dragging on
+            this bar.
 
-          ** 3 Filter  **
-          You can filter by the type of task, or search active tasks by
-          database name (either source or target) using these tabs.
-      
-      div.chapter#_config
-        :markdown
-          # Configuration
+            ** 2 API URL  **
+            This page is an interface to the
+            [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
+            call. You can view or copy the raw JSON by clicking on this button.
 
-          An interface into the configuration of your CouchDB installation. The
-          interface allows you to edit the different configurable parameters. 
-          For more details on configuration, see the
-          [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config)
-          section.
+            ** 3 Filter  **
+            You can filter by the type of task, or search active tasks by
+            database name (either source or target) using these tabs.
+        
+        div.chapter#_config
+          :markdown
+            # Configuration
 
-      div.chapter#replication
-        :markdown
-          # Replication
+            An interface into the configuration of your CouchDB installation. The
+            interface allows you to edit the different configurable parameters. 
+            For more details on configuration, see the
+            [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config)
+            section.
 
-          This is the interface to the replication system, enabling you to initiate
-          replication between local and remote databases.
+        div.chapter#replication
+          :markdown
+            # Replication
 
-          You will see two boxes, with 3 boxes in each bigger box.
+            This is the interface to the replication system, enabling you to initiate
+            replication between local and remote databases.
 
-          Depending on how big your screen is, the top (or leftmost box, labeled
-          \#1 in the example) is the Source database. The bottom (or rightmost
-          box, label \#2) is the Target database.
+            You will see two boxes, with 3 boxes in each bigger box.
 
-          From the Source database box (\#1), you can choose an existing 
-          database from the dropdown, by selecting 'Local' like in the image to 
-          the left. Or you can specify a remote database as the Source, by 
-          clicking on 'Remote' in that box, and typing in the remote database's
-          address.
+            Depending on how big your screen is, the top (or leftmost box, labeled
+            \#1 in the example) is the Source database. The bottom (or rightmost
+            box, label \#2) is the Target database.
 
-          In the Target database box (\#2), choose either a local or remote
-          database. If you want to create a new database, and replicate into
-          that new DB, check the 'Create Target' button.
+            From the Source database box (\#1), you can choose an existing 
+            database from the dropdown, by selecting 'Local' like in the image to 
+            the left. Or you can specify a remote database as the Source, by 
+            clicking on 'Remote' in that box, and typing in the remote database's
+            address.
 
-          For continuous Replications, select the 'continuous' checkbox.
-          'Continous' means that the target database will update itself whenever
-          the source database is updated, from now on. It will continue to 
-          update itself until you cancel the continous replication.
+            In the Target database box (\#2), choose either a local or remote
+            database. If you want to create a new database, and replicate into
+            that new DB, check the 'Create Target' button.
 
-          If you are specifying a remote database name, you must specify the 
-          full URL of the remote database (including the host, port number and 
-          database name). If the remote instance requires authentication, you
-          can specify the username and password as part of the URL, for example
-          ``http://username:pass@remotehost:5984/demo``.
+            For continuous Replications, select the 'continuous' checkbox.
+            'Continous' means that the target database will update itself whenever
+            the source database is updated, from now on. It will continue to 
+            update itself until you cancel the continous replication.
 
-          Under the [Active Tasks](#page-active-tasks) tab, you should see in 
-          the table your new created replication. You might miss it if the 
-          database being replicated is on the small side, but continous 
-          replications will always show up while they are active.
+            If you are specifying a remote database name, you must specify the 
+            full URL of the remote database (including the host, port number and 
+            database name). If the remote instance requires authentication, you
+            can specify the username and password as part of the URL, for example
+            ``http://username:pass@remotehost:5984/demo``.
 
-          For more information, see
-          [/_replicate](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-replicate).
+            Under the [Active Tasks](#_activetasks) tab, you should see in 
+            the table your new created replication. You might miss it if the 
+            database being replicated is on the small side, but continous 
+            replications will always show up while they are active.
 
-          For more information on replication, see
-          [Replication](http://docs.couchdb.org/en/latest/replication/index.html#replication).
+            For more information, see
+            [/_replicate](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-replicate).
 
-      div.chapter#documentation
-        :markdown
-          # Documentation
+            For more information on replication, see
+            [Replication](http://docs.couchdb.org/en/latest/replication/index.html#replication).
 
-          Here you will find helpful online and offline versions of CouchDB Documentation, as well as links to various related links regarding the CouchDB community.
-      
-      div.chapter#login 
-        :markdown
-          # Login/User Management
+        div.chapter#documentation
+          :markdown
+            # Documentation
 
-          You can change your password, or add admins to your CouchDB instance within this tab.
+            Here you will find helpful online and offline versions of CouchDB Documentation, as well as links to various related links regarding the CouchDB community.
+        
+        div.chapter#login 
+          :markdown
+            # Login/User Management
 
-      div.chapter#verifyinstall
-        :markdown
-          # Verify
+            You can change your password, or add admins to your CouchDB instance within this tab.
 
-          The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
+        div.chapter#verifyinstall
+          :markdown
+            # Verify
+
+            The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
 
   div#answers.section
     div#middleBar 
       img(src='imgs/answers-light.png').topic-image
       div.section-title Answers
-    div#rightContent Answers RightContent
-  
-    
+    div#rightContent 
+      h1 Answers!
+        p.question Q: Where can I find answers about CouchDB?
+        p.answer
+          | A: Checkout the 
+          a(href="http://wiki.apache.org/couchdb/Frequently_asked_questions") CouchDB FAQ
+          | .
+        p.question Q: Wow! this is awesome! how can I contribute?
+        p.answer
+          | A: Thanks! If you want to contribute, you can open a pull request 
+          | on 
+          a(href="https://github.com/apache/couchdb-fauxton") Github
+          | .
+        p.question Q: What can I do?
+        p.answer
+          | A: Lots of things! checkout our 
+          a(href="https://issues.apache.org/jira/browse/COUCHDB/component/12320406/?selectedTab=com.atlassian.jira.jira-projects-plugin:component-summary-panel") JIRA
+          |  page for a list of things we need help fixing or building.
+        p.question Q: I'm not a programmer. What can I do?
+        p.answer.
+          A: Good question. There are many things you can do to help out! Find
+          a place that you think needs fixing, and find out how to fix it.
+
+        :markdown
+          For example, if you find the documentation a long rabbit hole of 
+          links and links (and links and links....) you could come up with a
+          hierarchical system of links or strategy guide that would help out a
+          newbie.
+
+          If you have design skills, or would like to learn architecture 
+          skills, you can help out by finding a cumbersome or non-intuitive
+          part of CouchDB and/or Fauxton and propose a fix. Good ideas are 
+          always welcome :)
+
+          Another thing is documentation. We have a lot, but the more the
+          better! If you find a place in CouchDB that is not well-documented,
+          feel free!
+
+        p.question Q: I found a bug and I think it should be fixed!
+        p.answer.
+          A: Awesome! Open a pull request and we can make that happen!
+
+      h1 Helpful Links
+         :markdown
+          [CouchDB Homepage](https://couchdb.apache.org/) (more info is
+          available here!)
+
+          [How to Install/Setup](http://docs.couchdb.org/en/latest/install/index.html)
+          
+          [Install via npm](https://www.npmjs.com/package/fauxton)  
+
+          [CouchDB Documentation](http://docs.couchdb.org/en/latest/)
+
+          [CouchDB Blog](http://blog.couchdb.org/) Updates Weekly! :)
+          
+          [CouchDB Wiki](http://wiki.apache.org/couchdb/)
+
+          [CoucDB: The Definitive Guide](http://guide.couchdb.org/index.html)
+
+          [CouchDB Tutorials](http://wiki.apache.org/couchdb/Basics) General and
+          Tutorials for Specific Languages
+
+          [CouchDB IRC](http://webchat.freenode.net/?channels=couchdb) Our chat 
+          channel
+
+          [Apache Software Foundation](http://www.apache.org/) About the ASF
