@@ -137,7 +137,7 @@ html, body {
 }
 
 #middleBar {
-  width: 250px;
+  width: 255px;
   margin-left: 50px;
   padding-top: 50px;
   position: fixed;
@@ -160,7 +160,7 @@ html, body {
   width: calc(100% ~"-" 430px);
   min-width: 400px;
   max-width: 625px; 
-  left: 280px;
+  left: 300px;
   top: 0px;
   font-weight: 300;
   text-align: left;
@@ -210,14 +210,23 @@ html, body {
     height: 100%;
     float: left;
     font-size: 20px;
-    color: #b3b3b3;
 
-    > div i:hover, > div svg:hover {
-      cursor: pointer;
-      color: black;
+    a {
+      color: #b3b3b3;
     }
 
-    .replicate-icon, .user-icon {
+    > div i:hover, 
+    > div svg:hover, 
+    a.selected {
+      cursor: pointer;
+      color: black;
+
+      path {
+       fill: black;
+      }
+    }
+
+    .replicate-icon, .user-icon, .docs-icon {
       width: 22px;
 
       &:hover {
@@ -242,7 +251,7 @@ html, body {
     float: right;
     font-weight: 400;
     text-align: left;
-    width: 165px;
+    width: 175px;
     cursor: pointer;
     padding-right: 15px;
 
@@ -253,9 +262,14 @@ html, body {
 
 
     .heading {
-      padding-bottom: 12px;
-      padding-left: 15px;
+      display: block;
+      margin-left: 12px;
+      margin-bottom: 15px;
       font-size: 12px;
+      
+      .heading-title { 
+        padding-left: 18px;
+      }
 
       &:hover {
         font-weight: bold;
@@ -291,6 +305,8 @@ html, body {
         margin-bottom: 10px;
         padding-left: 15px;
         border-left: 2px solid red;
+        color: black;
+
         .number {
           font-size: 18px;
         }
@@ -301,7 +317,7 @@ html, body {
       }
 
       .subheading {
-        padding-left: 15px;
+        padding-left: 19px;
       }
     }
   }

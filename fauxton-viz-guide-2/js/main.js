@@ -16,10 +16,12 @@ function toggleSidebar() {
 }
 
 function clickSidebarItemListener () {
+
+  //makes the CSS changes
   $('#redsidebar .section').click(function () {
     clearAll();
     var sectionChosen = $(this).data('nav');
-    console.log(sectionChosen);
+
     $('#' + sectionChosen).addClass('shown');
     $('.' + sectionChosen + ' .big-nav-subtitle')
       .css({
@@ -30,7 +32,7 @@ function clickSidebarItemListener () {
       .css('background-image', 'url("imgs/'+ sectionChosen +'-dark.png")');
   });
 
-
+  //makes the CSS default
   function clearAll () {
     $('#getting-started').removeClass('shown');
     $('#using-fauxton').removeClass('shown');
@@ -46,15 +48,17 @@ function clickSidebarItemListener () {
 }
 
 function usingFauxtonNavigationListener () {
-  $('#using-fauxton .toc a').click(function () {
-
+  $('#using-fauxton .toc a, .fauxton-toc .icon-menu a').click(function () {
+    clearAll();
     var href = $(this).attr('href');
-    console.log(href);
+    var address = href.substring(1);
 
+    $('#toc-' + address).addClass('selected');
+    $('.icon-menu-'+ address).addClass('selected');
   });
 
   function clearAll () {
-    $('.toc .heading').each(function () {
+    $('.toc .heading, .fauxton-toc .icon-menu a').each(function () {
       $(this).removeClass('selected');
     })
   }

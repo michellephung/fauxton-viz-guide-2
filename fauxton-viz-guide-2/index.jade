@@ -51,68 +51,76 @@ div#content.showSideBar
       div.fauxton-toc
         div.icon-menu
           div
-            i(aria-hidden="true").fa.fa-database
+            a(href="#_all_dbs").icon-menu-_all_dbs
+              i(aria-hidden="true").fa.fa-database
             div.line
           div
-            i(aria-hidden="true").fa.fa-wrench
+            a(href="#setup").icon-menu-setup
+              i(aria-hidden="true").fa.fa-wrench
             div.line
           div
-            i(aria-hidden="true").fa.fa-tasks
+            a(href="#_activetasks").icon-menu-_activetasks
+              i(aria-hidden="true").fa.fa-tasks
             div.line
           div
-            i(aria-hidden="true").fa.fa-cog
+            a(href="#_config").icon-menu-_config
+              i(aria-hidden="true").fa.fa-cog
             div.line
           div
-            img(src='imgs/replicate.svg').svg.replicate-icon 
+            a(href="#replication").icon-menu-replication
+              img(src='imgs/replicate.svg').svg.replicate-icon 
             div.line
           div
-            img(src='imgs/bookmark.svg').svg.user-icon 
+            a(href="#documentation").icon-menu-documentation
+              img(src='imgs/bookmark.svg').svg.docs-icon
             div.line
           div
-            img(src='imgs/user.svg').svg.user-icon 
+            a(href="#login").icon-menu-login
+              img(src='imgs/user.svg').svg.user-icon 
             div.line
           div
-            i(aria-hidden="true").fa.fa-check-circle
+            a(href="#verifyinstall").icon-menu-verifyinstall
+              i(aria-hidden="true").fa.fa-check-circle
             
         div.toc
-          div.heading#toc-intro.selected 
-            a(href="#intro").heading-title 
+          a(href="#intro").heading#toc-intro.selected 
+            div.heading-title 
               span.number 00
               span.heading-text
-          div.heading#toc-_all_dbs 
-            a(href="#_all_dbs").heading-title 
+          a(href="#_all_dbs").heading#toc-_all_dbs 
+            div.heading-title 
               span.number 01 // 
               span.heading-text ALL DATABASES
             div.subheading ADD A NEW DATABASE
             div.subheading SEARCH FOR A DATABASE
             div.subheading VIEW A DATABASE
             div.subheading ACTIONS
-          div.heading#toc-setup
-            a(href="#setup").heading-title 
+          a(href="#setup").heading#toc-setup
+            div.heading-title 
               span.number 02 // 
               span.heading-text SETUP
-          div.heading#toc-_activetasks
-            a(href="#_activetasks").heading-title 
+          a(href="#_activetasks").heading#toc-_activetasks
+            div.heading-title 
               span.number 03 // 
               span.heading-text ACTIVE TASKS
-          div.heading#toc-_config
-            a(href="#_config").heading-title 
+          a(href="#_config").heading#toc-_config
+            div.heading-title 
               span.number 04 // 
               span.heading-text CONFIGURATION
-          div.heading#toc-replication
-            a(href="#replication").heading-title 
+          a(href="#replication").heading#toc-replication
+            div.heading-title 
               span.number 05 // 
               span.heading-text REPLICATION
-          div.heading#toc-documentation 
-            a(href="#documentation").heading-title 
+          a(href="#documentation").heading#toc-documentation 
+            div.heading-title 
               span.number 06 // 
               span.heading-text DOCUMENTATION 
-          div.heading#toc-login 
-            a(href="#login").heading-title 
+          a(href="#login").heading#toc-login 
+            div.heading-title 
               span.number 07 // 
               span.heading-text LOGIN / ADMIN
-          div.heading#toc-verifyinstall 
-            a(href="#verifyinstall").heading-title 
+          a(href="#verifyinstall").heading#toc-verifyinstall 
+            div.heading-title 
               span.number 08 // 
               span.heading-text VERIFY
 
