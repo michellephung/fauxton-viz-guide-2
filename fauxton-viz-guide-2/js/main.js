@@ -46,9 +46,18 @@ function clickSidebarItemListener () {
 }
 
 function usingFauxtonNavigationListener () {
-  $('#redsidebar .section').click(function () {
+  $('#using-fauxton .toc a').click(function () {
+
+    var href = $(this).attr('href');
+    console.log(href);
 
   });
+
+  function clearAll () {
+    $('.toc .heading').each(function () {
+      $(this).removeClass('selected');
+    })
+  }
 }
 
 /*
