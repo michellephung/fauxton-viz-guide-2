@@ -123,24 +123,168 @@ div#content.showSideBar
               span.heading-text VERIFY
 
     div#rightContent
-      div.title#intro INTRODUCTION
-        div Overview Overview Overview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview OverviewOverview Overview
-      div.title#_all_dbs All Databases
-        div  All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases All Databases
-      div.title#setup Setup
-        div   Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup Setup
-      div.title#_activetasks All Active Tasks
-         div All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks All Active Tasks
-      div.title#_config Main Configuration
-        div  Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration Main Configuration
-      div.title#replication Replication
-        div  Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication Replication
-      div.title#documentation DOCUMENTATION 
-        div DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION DOCUMENTATION 
-      div.title#login Login/User Management
-         div Login/User Management  Login/User Management  Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management Login/User Management
-      div.title#verifyinstall Verify
-        div  Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify Verify
+     div.chapter#intro 
+        :markdown
+          # INTRODUCTION 
+          ## Features Overview
+
+          When you first start to use Fauxton, the left most navigation panel
+          will allow you jump quickly between viewing different parts of what's
+          going on in your CouchDB instance.
+
+          You can expand or collapse the navigation by clicking on the area 
+          above the topmost tab, "Databases", where the icon of the three
+          horizontal lines is.
+
+          [Databases](#_all_dbs) will show you a list of all your databases,
+          their size, number of documents, and provides quick links to it's
+          permissions page and replication page.
+
+          [Active Tasks](#_activetasks) displays a list of the running
+          background tasks on the server. Background tasks include view index
+          building, compaction and replication. This page is an interface to
+          the [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
+          call.
+
+          [Config](#_config) is an interface for the configuration of your
+          CouchDB installation. The interface allows you to edit different
+          configurable parameters. For more details on configuration, see
+          [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config).
+
+          [Replication](#replication) is an interface to the replication
+          system, enabling you to initiate replication between local and remote
+          databases.
+
+          [Documentation](http://docs.couchdb.org/en/latest/)
+          will direct you to your local copy of the documentation. The link 
+          shown in this guide is to the online version.
+
+          [Login/User Management](#login) lets you can change your password,
+          or add administrator to your CouchDB instance.
+
+          [Verify](#verifyinstall) verifies your installation and allows you to
+          check whether all of the components of your CouchDB installation are
+          correctly installed.
+      
+      div.chapter#_all_dbs
+        :markdown
+          # All Databases
+          ** 1 Add a new Database **
+          Click this button on the top bar, and
+          enter the name of the database you want to create.
+
+          ** 2 Search for a Database **
+          This text field auto-completes and jumps directly to a specified
+          database.
+
+          ** 3 View a Database  **
+          This link will take to that database's "[All Docs](#page-all-docs)"
+          page where you can view all of that database's contents. You can also
+          delete, replicate, and change the permissions for a database from the
+          database's 'All Docs' page.
+
+          ** 4 Replication Link **
+          Jump directly to the Replication page for this database.
+
+          ** 5 Permissions Link  **
+          Jump directly to the Permissions page for this database.
+
+      div.chapter#setup
+        :markdown
+          # Setup
+
+      div.chapter#_activetasks
+        :markdown
+          # Active Tasks
+
+          ** 1 Change Polling Interval  **
+          The status of each task can change as you are watching the Active 
+          Tasks page. The page auto-updates, but polls at regular intervals. You
+          can set the amount of time that the page updates itself by dragging on
+          this bar.
+
+          ** 2 API URL  **
+          This page is an interface to the
+          [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
+          call. You can view or copy the raw JSON by clicking on this button.
+
+          ** 3 Filter  **
+          You can filter by the type of task, or search active tasks by
+          database name (either source or target) using these tabs.
+      
+      div.chapter#_config
+        :markdown
+          # Configuration
+
+          An interface into the configuration of your CouchDB installation. The
+          interface allows you to edit the different configurable parameters. 
+          For more details on configuration, see the
+          [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config)
+          section.
+
+      div.chapter#replication
+        :markdown
+          # Replication
+
+          This is the interface to the replication system, enabling you to initiate
+          replication between local and remote databases.
+
+          You will see two boxes, with 3 boxes in each bigger box.
+
+          Depending on how big your screen is, the top (or leftmost box, labeled
+          \#1 in the example) is the Source database. The bottom (or rightmost
+          box, label \#2) is the Target database.
+
+          From the Source database box (\#1), you can choose an existing 
+          database from the dropdown, by selecting 'Local' like in the image to 
+          the left. Or you can specify a remote database as the Source, by 
+          clicking on 'Remote' in that box, and typing in the remote database's
+          address.
+
+          In the Target database box (\#2), choose either a local or remote
+          database. If you want to create a new database, and replicate into
+          that new DB, check the 'Create Target' button.
+
+          For continuous Replications, select the 'continuous' checkbox.
+          'Continous' means that the target database will update itself whenever
+          the source database is updated, from now on. It will continue to 
+          update itself until you cancel the continous replication.
+
+          If you are specifying a remote database name, you must specify the 
+          full URL of the remote database (including the host, port number and 
+          database name). If the remote instance requires authentication, you
+          can specify the username and password as part of the URL, for example
+          ``http://username:pass@remotehost:5984/demo``.
+
+          Under the [Active Tasks](#page-active-tasks) tab, you should see in 
+          the table your new created replication. You might miss it if the 
+          database being replicated is on the small side, but continous 
+          replications will always show up while they are active.
+
+          For more information, see
+          [/_replicate](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-replicate).
+
+          For more information on replication, see
+          [Replication](http://docs.couchdb.org/en/latest/replication/index.html#replication).
+
+      div.chapter#documentation
+        :markdown
+          # Documentation
+
+          Here you will find helpful online and offline versions of CouchDB Documentation, as well as links to various related links regarding the CouchDB community.
+      
+      div.chapter#login 
+        :markdown
+          # Login/User Management
+
+          You can change your password, or add admins to your CouchDB instance within this tab.
+
+      div.chapter#verifyinstall
+        :markdown
+          # Verify
+
+          The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
+
   div#answers.section
     div#middleBar 
       img(src='imgs/answers-light.png').topic-image

@@ -5,6 +5,7 @@ $(document).ready(function(){
     clickSidebarItemListener();
     usingFauxtonNavigationListener();
     onLoadJumpToAnchor();
+    detectHashChange();
 });
 
 function onLoadJumpToAnchor () {
@@ -25,7 +26,12 @@ function onLoadJumpToAnchor () {
       if (location.hash) {
         location.href = location.hash;
       }
-  }
+  } 
+}
+function detectHashChange () {
+  $(window).on('hashchange', function() {
+    onLoadJumpToAnchor();
+  });
 }
 
 function toggleSidebar() {
@@ -57,6 +63,10 @@ function clickSidebarItemListener () {
     $('#getting-started').removeClass('shown');
     $('#using-fauxton').removeClass('shown');
     $('#answers').removeClass('shown');
+    $('.toc .heading, .fauxton-toc .icon-menu a').each(function () {
+      $(this).removeClass('selected');
+    })
+
     $('.big-nav-subtitle')
       .css({
         'color': '',
@@ -80,7 +90,7 @@ function usingFauxtonNavigationListener () {
   function clearAll () {
     $('.toc .heading, .fauxton-toc .icon-menu a').each(function () {
       $(this).removeClass('selected');
-    })
+    });
   }
 }
 

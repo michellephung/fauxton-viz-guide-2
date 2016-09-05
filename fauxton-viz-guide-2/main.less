@@ -193,13 +193,14 @@ html, body {
     font-size: 24px;
     font-weight: normal;
     padding-bottom: 20px;
+    
     &::before {
       content: url('imgs/diamond.png');
       margin-right: 10px;
     }
   }
 
-  div, h2 {
+  div, h2, p {
     margin-left: 25px;
     margin-top: 15px;
     font-size: 16px;
@@ -218,11 +219,20 @@ html, body {
   #rightContent {
     padding-bottom: 50%;
 
-    .title {
+    .chapter {
       padding: 75px 0 0 0;
+      border-top: 1px solid gainsboro;
+
+      a {
+        color: black;
+        
+        &:hover{
+          color: darkgray;
+        }
+
+      }
     }
   }
-
 }
 .fauxton-toc {
   margin-top: 40px;
