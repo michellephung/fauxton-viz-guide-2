@@ -7,7 +7,7 @@ $(document).ready(function(){
   usingFauxtonNavigationListener();
   jumpToAnchor();
   detectHashChange();
-//  changeHashOnScroll();
+  changeHashOnScroll();
 });
 
 function jumpToAnchor () {
@@ -51,22 +51,22 @@ function jumpToAnchor () {
 }
 
 function changeHashOnScroll() {
-  // http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
-  // $('#content').scroll(function (e) {
-  //   $('div.chapter').each(function () {
-  //       if (
-  //         $(this).offset().top < window.pageYOffset + 10
-  //         //begins before top
-  //         && $(this).offset().top + $(this).height() > window.pageYOffset + 10
-  //         //but ends in visible area
-  //         //+ 10 allows you to change hash before it hits the top border
-  //       ){
+  http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
+  $('#content').scroll(function (e) {
+    $('div.chapter').each(function () {
+        if (
+          $(this).offset().top < window.pageYOffset + 10
+          //begins before top
+          && $(this).offset().top + $(this).height() > window.pageYOffset + 10
+          //but ends in visible area
+          //+ 10 allows you to change hash before it hits the top border
+        ){
 
-  //         //hacky way to get smooth scrolling without losing anchor usability  :(
-  //         window.location.hash = $(this).attr('id') + '_';
-  //       }
-  //   });
-  // });
+          //hacky way to get smooth scrolling without losing anchor usability  :(
+          window.location.hash = $(this).attr('id') + '_';
+        }
+    });
+  });
 }
 
 function detectHashChange () {
