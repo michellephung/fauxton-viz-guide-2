@@ -13,7 +13,6 @@ $(document).ready(function(){
 function jumpToAnchor () {
 
   var hash = window.location.hash;
-
   switch (hash) {
     case '' : 
       $('#redsidebar .getting-started').click();
@@ -39,8 +38,6 @@ function highlightFauxtonNavigation () {
     var hash = window.location.hash;
     var address = hash.substring(1);
     var end = address.slice(-1);
-
-    if (end === '_') address = address.substring(0, address.length - 1);
 
     $('#toc-' + address).addClass('selected');
     $('.icon-menu-'+ address).addClass('selected');
@@ -76,6 +73,20 @@ function detectHashChange () {
   $(window).on('load', function() {
     jumpToAnchor();
   });
+
+  $(window).on('hashchange', function() {
+    var hash = window.location.hash;
+
+    if (
+      hash === '#editor' ||
+      hash === '#_all_docs' ||
+      hash === '#db-action'
+    ) {
+      $('#toc-_all_dbs').addClass('selected');
+      $('.icon-menu-_all_dbs').addClass('selected');
+    }
+  });
+
 }
 
 function toggleSidebar() {
@@ -124,11 +135,16 @@ function clickSidebarItemListener () {
 function usingFauxtonNavigationListener () {
   $('#using-fauxton .toc a, .fauxton-toc .icon-menu a').click(function (e) {
     clearAll();
+
+    if ($(this).hasClass('subheading')) {
+      e.stopPropagation();
+    }
     var href = $(this).attr('href');
     var address = href.substring(1);
 
     $('#toc-' + address).addClass('selected');
     $('.icon-menu-'+ address).addClass('selected');
+
   });
 
   function clearAll () {

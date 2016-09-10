@@ -179,9 +179,9 @@ html, body {
                                   not supported by any browser */
   margin-top: 50px;
   position: absolute;
-  width: calc(100% ~"-" 430px);
+  width: calc(100% "~"- 130px);
   min-width: 400px;
-  max-width: 625px; 
+  max-width: 960px;
   left: 300px;
   top: 0px;
   font-weight: 300;
@@ -235,6 +235,10 @@ html, body {
         &:hover{
           color: darkgray;
         }
+      }
+
+      img {
+        width: 100%;      
       }
     }
   }
@@ -308,20 +312,29 @@ html, body {
         padding-left: 18px;
       }
 
+      .subheading {
+        font-weight: normal;
+        display: none;
+        line-height: 17px;
+        font-size: 10px;
+        margin-left: 8px;
+
+        &:hover {
+          color: red;
+        }
+      }
+
+      &.selected .subheading {
+        display:block;
+        padding-left: 19px;
+      }
+      
+
       &:hover {
         font-weight: bold;
         color: black;
         .subheading {
           font-weight: normal;
-        }
-      }
-
-      .subheading {
-        display: none;
-        line-height: 17px;
-        font-size: 10px;
-        &:hover {
-          color: red;
         }
       }
     }
@@ -331,10 +344,6 @@ html, body {
       
       &.heading {
         padding-left: 0px;
-      }
-
-      .subheading {
-        display:block;
       }
 
       .heading-title {
@@ -353,9 +362,6 @@ html, body {
         }
       }
 
-      .subheading {
-        padding-left: 19px;
-      }
     }
   }
 }
