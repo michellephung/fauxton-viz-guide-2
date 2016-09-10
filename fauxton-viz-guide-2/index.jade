@@ -90,7 +90,7 @@ div#content.showSideBar
               span.number 01 // 
               span.heading-text ALL DATABASES
             a(href="#_all_dbs").subheading ADD A NEW DATABASE
-            a(href="#_all_docs").subheading A SINGLE DB - ALL DOCS
+            a(href="#_all_docs").subheading A SINGLE DB (ALL DOCS)
             a(href="#editor").subheading THE EDITOR
             a(href="#db-action").subheading DATABASE ACTIONS
           a(href="#setup").heading#toc-setup
@@ -128,6 +128,8 @@ div#content.showSideBar
           :markdown
             # INTRODUCTION 
             ## Features Overview
+
+            This guide is from September 2016. Fauxton is continuously being improved, so there may be slight differences in the examples in this document vs the latest and greatest <a href="https://www.npmjs.com/package/fauxton">Fauxton on npm</a>.
 
             When you first start to use Fauxton, the left most navigation panel
             will allow you jump quickly between viewing different parts of what's
@@ -171,7 +173,7 @@ div#content.showSideBar
         
         div.chapter#_all_dbs
           :markdown
-            # All Databases
+            # Databases
             ** Create Database **
             Click this button on the top bar, and
             enter the name of the database you want to create.
@@ -192,6 +194,58 @@ div#content.showSideBar
             database's 'All Docs' page.
             ![Select a DB](imgs/screenshots/selectdb.png "Select a DB")
 
+
+          h1#_all_docs A Single Database
+          :markdown
+            ** All Documents **
+            When you click on the database name, from the Databases page, you will see the **All Docs** page. Here you can create and edit documents, and create and edit views.
+            ![All Docs](imgs/screenshots/empty_alldocs.png "All Docs")
+
+            ** Create a Document **
+            Click on the plus symbol to open the 'Add new' menu.
+            ![Create a Doc Menu](imgs/screenshots/create-doc-menu.png "Create a Doc Menu")
+
+            This should open a menu that will let you choose what the new document type you would like to create.
+
+            ![Create a Doc Menu](imgs/screenshots/create-doc-menu-2.png "Create a Doc Menu")
+
+            If you click New Doc, you'll be taken to the Fauxton text editor.
+
+          h1#editor The Editor
+          :markdown
+            ** The Editor **
+            When you first arrive at the editor, you will see:
+            ![Editor](imgs/screenshots/editor1.png "Editor")
+
+            At this point, nothing has been created yet. The document on screen is pre-filled with a JSON object, and an _id with a Globally Unique Identifier (GUID). If you want to change the value of the _id, you must do that before you create the document.
+
+            You can edit any data for the document before or after creating the document, except for the _id, after it has been created.
+
+            Adding Data:
+            ![Adding data](imgs/screenshots/editor2.png "Adding data")
+
+            Click the **Create Document** to save the document.
+
+            ![Click Create](imgs/screenshots/editor3.png "Click Create Document")
+
+            After you click **Create Document** you will go to back to the All Docs page, and you should see it there with a success message in green up top. If you did not change the ID, you may not be able to see your data on this screen. 
+            ![Create Document Success](imgs/screenshots/editor4
+            .png "Create Document Success")
+
+            You can click on the ** Include Docs ** checkbox to see the entire document on this screen.
+            ![Included Docs](imgs/screenshots/editor5.png "Include Docs")
+
+            ![Included Docs](imgs/screenshots/editor6.png "Include Docs")
+
+
+          h1#db-action Database Maintainance
+          :markdown
+            ** DB Maintainance**
+            ![DB Admin Menu](imgs/screenshots/db-admin1.png "DB Admin Menu")
+            This menu will allows you replicate the Database, and as well as delete it.
+            ![DB Admin Menu](imgs/screenshots/db-admin2.png "DB Admin Menu")
+
+
             ** Replication Link **
             Jump directly to the Replication page for this database.
             ![Replicate a DB](imgs/screenshots/jumptoreplicate.png "Replicate a DB")
@@ -200,13 +254,12 @@ div#content.showSideBar
             Jump directly to the Permissions page for this database.
             ![Jump to Permissions](imgs/screenshots/jumptopermissions.png "Jump to Permissions")
 
-          h2#_all_docs A SINGLE DATABASE - ALL DOCS
-          h2#editor THE EDITOR
-          h2#db-action DATABASE ACTIONS
-
         div.chapter#setup
           :markdown
             # Setup
+            More info coming soon
+            ![Setup 1](imgs/screenshots/setup1.png "Setup 1")
+            ![Setup 2](imgs/screenshots/setup2.png "Setup 2")
 
         div.chapter#_activetasks
           :markdown
@@ -217,19 +270,24 @@ div#content.showSideBar
             Tasks page. The page auto-updates, but polls at regular intervals. You
             can set the amount of time that the page updates itself by dragging on
             this bar.
+            ![Active Tasks Polling](imgs/screenshots/activetasks1.png "Active Tasks Polling")
 
             ** 2 API URL  **
             This page is an interface to the
             [Active Tasks API](http://docs.couchdb.org/en/latest/api/server/common.html#api-server-active-tasks)
             call. You can view or copy the raw JSON by clicking on this button.
+            ![Active Tasks API](imgs/screenshots/activetasks2.png "Active Tasks API")
 
             ** 3 Filter  **
             You can filter by the type of task, or search active tasks by
             database name (either source or target) using these tabs.
+            ![Active Tasks Filter](imgs/screenshots/activetasks3.png "Active Tasks Filter")
         
         div.chapter#_config
           :markdown
             # Configuration
+
+            (This may be disabled)
 
             An interface into the configuration of your CouchDB installation. The
             interface allows you to edit the different configurable parameters. 
@@ -246,17 +304,20 @@ div#content.showSideBar
 
             You will see two boxes, with 3 boxes in each bigger box.
 
-            Depending on how big your screen is, the top (or leftmost box, labeled
-            \#1 in the example) is the Source database. The bottom (or rightmost
-            box, label \#2) is the Target database.
+            ![Replication](imgs/screenshots/replication1.png "Replication")
 
-            From the Source database box (\#1), you can choose an existing 
+            Depending on how big your screen is, the top (or leftmost box, where the Teal star is located) is the Source database. The bottom (or rightmost
+            where the Purple Star is located) is the Target database.
+
+            ![Replication](imgs/screenshots/replcationSourceTarget.png "Replication")
+
+            From the Source database box (Teal Star), you can choose an existing 
             database from the dropdown, by selecting 'Local' like in the image to 
             the left. Or you can specify a remote database as the Source, by 
             clicking on 'Remote' in that box, and typing in the remote database's
             address.
 
-            In the Target database box (\#2), choose either a local or remote
+            In the Target database box (Purple Star), choose either a local or remote
             database. If you want to create a new database, and replicate into
             that new DB, check the 'Create Target' button.
 
@@ -286,19 +347,26 @@ div#content.showSideBar
           :markdown
             # Documentation
 
-            Here you will find helpful online and offline versions of CouchDB Documentation, as well as links to various related links regarding the CouchDB community.
+            Here you will find helpful online and offline versions of CouchDB Documentation, as well as links to various related links regarding the CouchDB community. If you need to look at this guide again, the link is also here.
+
+            ![Documentation](imgs/screenshots/docs.png "Documentation")
         
         div.chapter#login 
           :markdown
             # Login/User Management
 
             You can change your password, or add admins to your CouchDB instance within this tab.
+            ![Admin](imgs/screenshots/admin.png "![Documentation](imgs/screenshots/docs.png "Documentation")
 
         div.chapter#verifyinstall
           :markdown
             # Verify
 
             The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
+
+            ![Verify](imgs/screenshots/verify.png "Verify")
+
+        div#the-end THE END
 
   div#answers.section
     div#middleBar 
