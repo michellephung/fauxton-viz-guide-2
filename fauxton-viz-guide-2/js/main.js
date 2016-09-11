@@ -8,6 +8,7 @@ $(document).ready(function(){
   jumpToAnchor();
   detectHashChange();
   changeHashOnScroll();
+  scrollOnMiddleBarScrollsRightContent();
 });
 
 function jumpToAnchor () {
@@ -30,6 +31,13 @@ function jumpToAnchor () {
       }
       highlightFauxtonNavigation();
   }
+}
+
+function scrollOnMiddleBarScrollsRightContent () {
+  $('#content').scroll(function (e) {
+    var top = $("#content").scrollTop();
+    $('#using-fauxton #middleBar').css('padding-top', (top + 50) + 'px');
+  });
 }
 
 function highlightFauxtonNavigation () {

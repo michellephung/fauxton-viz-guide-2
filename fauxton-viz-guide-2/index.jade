@@ -287,10 +287,12 @@ div#content.showSideBar
           :markdown
             # Configuration
 
-            (This may be disabled)
+            This may be disabled in Fauxton if you are using CouchDB 2.0, and you can only change config parameters via the backdoor port. It's best not to use Fauxton for setting config in 2.0, rather use a config tool like chef, puppet, ansible, etc.
 
-            An interface into the configuration of your CouchDB installation. The
-            interface allows you to edit the different configurable parameters. 
+            In earlier versions, the interface allows you to edit some of the different configurable parameters. 
+
+            ![Config](imgs/screenshots/config.png "Config")
+
             For more details on configuration, see the
             [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config)
             section.
