@@ -93,8 +93,11 @@ function detectHashChange () {
       $('#toc-_all_dbs').addClass('selected');
       $('.icon-menu-_all_dbs').addClass('selected');
     }
-  });
 
+    if (hash === '#answers') {
+      $('#content').scrollTop(0);
+    }
+  });
 }
 
 function toggleSidebar() {
