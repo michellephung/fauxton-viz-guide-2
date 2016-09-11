@@ -169,24 +169,21 @@ html, body {
 }
 
 #rightContent {
+  -webkit-touch-callout: text; 
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+ user-select: text;
 
-  -webkit-touch-callout: text; /* iOS Safari */
-  -webkit-user-select: text;   /* Chrome/Safari/Opera */
-  -khtml-user-select: text;    /* Konqueror */
-  -moz-user-select: text;      /* Firefox */
-  -ms-user-select: text;       /* Internet Explorer/Edge */
-  user-select: text;           /* Non-prefixed version, currently
-                                  not supported by any browser */
-  margin-top: 50px;
-  position: absolute;
-  width: calc(100% ~"-" 330px);
-  min-width: 400px;
-  max-width: 960px;
-  left: 300px;
-  top: 0px;
+  width: calc(100% ~"-" 300px);
+  padding-left: 300px;
   font-weight: 300;
   text-align: left;
-  padding-left: 20px;
+  margin: auto;
+  min-width: 400px;
+  max-width: 960px;
+  margin-top: 50px;
 
   .box {
     overflow-x: auto;
@@ -356,7 +353,6 @@ html, body {
           font-size: 12px;
         }
       }
-
     }
   }
 }
@@ -373,11 +369,4 @@ html, body {
       color: darkgray;
     }
   }
-}
-
-#the-end {
-    color: gray;
-    font-weight: bold;
-    text-align: center;
-    font-size: 24px !important;
 }
