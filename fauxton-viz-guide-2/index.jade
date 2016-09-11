@@ -40,8 +40,8 @@ div#content.showSideBar
     
         div 2. Learn how to install and setup CouchDB from 
           a(href='http://docs.couchdb.org/en/latest/install/index.html') here
-          span , then install Fauxton via 
-          a(href='https://www.npmjs.com/package/fauxton') npm  
+          span , then go to 
+          a(href='http://127.0.0.1:5984/_utils') http://127.0.0.1:5984/_utils
   div#using-fauxton.section
     div#middleBar
       img(src='imgs/using-fauxton-light.png').topic-image
@@ -257,9 +257,16 @@ div#content.showSideBar
         div.chapter#setup
           :markdown
             # Setup
-            More info coming soon
+            The Setup tab provides an installation wizard to help you setup a cluster, in case you haven’t done before, or in case you would prefer to use Fauxton.
+
+            You can read more about it in the docs: 
+            [Cluster Setup Wizard](http://docs.couchdb.org/en/master/cluster/setup.html#the-cluster-setup-wizard)
+
             ![Setup 1](imgs/screenshots/setup1.png "Setup 1")
             ![Setup 2](imgs/screenshots/setup2.png "Setup 2")
+
+            You can read more about CouchDB clusters in the docs as well: 
+            [CouchDB Clusters](http://docs.couchdb.org/en/master/cluster/index.html)
 
         div.chapter#_activetasks
           :markdown
