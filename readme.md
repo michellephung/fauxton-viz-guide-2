@@ -2,7 +2,9 @@ from this folder:
 
   harp compile fauxton-viz-guide-2/ fauxton-viz-guide-2-www
 
-looks like this: ![Screenshot]](https://raw.githubusercontent.com/michellephung/fauxton-viz-guide-2/master/Screen%20Shot%202016-09-13%20at%2012.48.36%20AM.png "wtf")
+looks like this:
+![Screenshot](https://github.com/michellephung/fauxton-viz-guide-2/blob/master/Screen%20Shot%202016-09-13%20at%2012.48.36%20AM.png)
+
 
 
 TO DO:
