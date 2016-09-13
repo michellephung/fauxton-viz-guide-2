@@ -2,6 +2,10 @@ from this folder:
 
   harp compile fauxton-viz-guide-2/ fauxton-viz-guide-2-www
 
+looks like this:
+	![Screenshot]]()
+
+
 TO DO:
 
   - ~~[BUG]Answers page, need to be able to scroll page when mouse is in the middle area column~~
