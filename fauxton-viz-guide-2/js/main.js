@@ -36,8 +36,10 @@ function jumpToAnchor () {
 function scrollOnMiddleBarScrollsRightContent () {
   $('#content').scroll(function (e) {
     var top = $("#content").scrollTop();
-    $('#using-fauxton #middleBar').css('padding-top', (top + 50) + 'px');
+    $('#using-fauxton.shown #middleBar').css('padding-top', (top + 50) + 'px');
+    $('#answers.shown #middleBar').css('padding-top', (top + 50) + 'px');
   });
+
 }
 
 function highlightFauxtonNavigation () {
