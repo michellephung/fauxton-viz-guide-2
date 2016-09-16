@@ -91,9 +91,51 @@ function changeHashOnScroll() {
       ){
         history.replaceState(undefined, undefined, "#" + $(this).attr('id'));
         highlightFauxtonNavigation();
+
+        if ($('#_all_dbs').visible(true)) {
+          clear();
+          $('#_all_dbs-sub').css({
+            'color': 'black',
+            'font-weight': 'bold'
+          });
+        }
+        
+
+        if ($('#_all_docs').visible(true)) {
+          clear();
+          $('#_all_docs-sub').css({
+            'color': 'black',
+            'font-weight': 'bold'
+          });
+          return;
+        }
+
+        if ($('#editor').visible(true)) {
+          clear();
+          $('#editor-sub').css({
+            'color': 'black',
+            'font-weight': 'bold'
+          });
+          return;
+        }
+
+        if ($('#db-action').visible(true)) {
+          clear();
+          $('#db-actions-sub').css({
+            'color': 'black',
+            'font-weight': 'bold'
+          });
+        }
       }
     });
   });
+
+  function clear () {
+    $('#db-actions-sub, #_all_docs-sub, #editor-sub, #_all_dbs-sub').css({
+      'color': '',
+      'font-weight': ''
+    });
+  }
 }
 
 function detectHashChange () {
