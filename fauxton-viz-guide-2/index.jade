@@ -89,10 +89,10 @@ div#content.showSideBar
             a(href="#_all_dbs").heading-title 
               span.number 01 // 
               span.heading-text ALL DATABASES
-            a(href="#_all_dbs").subheading ADD A NEW DATABASE
-            a(href="#_all_docs").subheading A SINGLE DB (ALL DOCS)
-            a(href="#editor").subheading THE EDITOR
-            a(href="#db-action").subheading DATABASE ACTIONS
+            a(href="#_all_dbs")._all_dbs.subheading ADD A NEW DATABASE
+            a(href="#_all_docs")._all_docs.subheading A SINGLE DB (ALL DOCS)
+            a(href="#editor").editor.subheading THE EDITOR
+            a(href="#db-action").db-action.subheading DATABASE ACTIONS
           a(href="#setup").heading#toc-setup
             div.heading-title 
               span.number 02 // 
@@ -195,64 +195,64 @@ div#content.showSideBar
             ![Select a DB](imgs/screenshots/selectdb.png "Select a DB")
 
 
-          h1#_all_docs A Single Database
-          :markdown
-            ** All Documents **
-            When you click on the database name, from the Databases page, you will see the **All Docs** page. Here you can create and edit documents, and create and edit views.
-            ![All Docs](imgs/screenshots/empty_alldocs.png "All Docs")
+          h1#_all_docs.sub A Single Database
+            :markdown
+              ** All Documents **
+              When you click on the database name, from the Databases page, you will see the **All Docs** page. Here you can create and edit documents, and create and edit views.
+              ![All Docs](imgs/screenshots/empty_alldocs.png "All Docs")
 
-            ** Create a Document **
-            Click on the plus symbol to open the 'Add new' menu.
-            ![Create a Doc Menu](imgs/screenshots/create-doc-menu.png "Create a Doc Menu")
+              ** Create a Document **
+              Click on the plus symbol to open the 'Add new' menu.
+              ![Create a Doc Menu](imgs/screenshots/create-doc-menu.png "Create a Doc Menu")
 
-            This should open a menu that will let you choose what the new document type you would like to create.
+              This should open a menu that will let you choose what the new document type you would like to create.
 
-            ![Create a Doc Menu](imgs/screenshots/create-doc-menu-2.png "Create a Doc Menu")
+              ![Create a Doc Menu](imgs/screenshots/create-doc-menu-2.png "Create a Doc Menu")
 
-            If you click New Doc, you'll be taken to the Fauxton text editor.
+              If you click New Doc, you'll be taken to the Fauxton text editor.
 
-          h1#editor The Editor
-          :markdown
-            ** The Editor **
-            When you first arrive at the editor, you will see:
-            ![Editor](imgs/screenshots/editor1.png "Editor")
+          h1#editor.sub The Editor
+            :markdown
+              ** The Editor **
+              When you first arrive at the editor, you will see:
+              ![Editor](imgs/screenshots/editor1.png "Editor")
 
-            At this point, nothing has been created yet. The document on screen is pre-filled with a JSON object, and an _id with a Globally Unique Identifier (GUID). If you want to change the value of the _id, you must do that before you create the document.
+              At this point, nothing has been created yet. The document on screen is pre-filled with a JSON object, and an _id with a Globally Unique Identifier (GUID). If you want to change the value of the _id, you must do that before you create the document.
 
-            You can edit any data for the document before or after creating the document, except for the _id, after it has been created.
+              You can edit any data for the document before or after creating the document, except for the _id, after it has been created.
 
-            Adding Data:
-            ![Adding data](imgs/screenshots/editor2.png "Adding data")
+              Adding Data:
+              ![Adding data](imgs/screenshots/editor2.png "Adding data")
 
-            Click the **Create Document** to save the document.
+              Click the **Create Document** to save the document.
 
-            ![Click Create](imgs/screenshots/editor3.png "Click Create Document")
+              ![Click Create](imgs/screenshots/editor3.png "Click Create Document")
 
-            After you click **Create Document** you will go to back to the All Docs page, and you should see it there with a success message in green up top. If you did not change the ID, you may not be able to see your data on this screen. 
-            ![Create Document Success](imgs/screenshots/editor4
-            .png "Create Document Success")
+              After you click **Create Document** you will go to back to the All Docs page, and you should see it there with a success message in green up top. If you did not change the ID, you may not be able to see your data on this screen. 
+              ![Create Document Success](imgs/screenshots/editor4
+              .png "Create Document Success")
 
-            You can click on the ** Include Docs ** checkbox to see the entire document on this screen.
-            ![Included Docs](imgs/screenshots/editor5.png "Include Docs")
+              You can click on the ** Include Docs ** checkbox to see the entire document on this screen.
+              ![Included Docs](imgs/screenshots/editor5.png "Include Docs")
 
-            ![Included Docs](imgs/screenshots/editor6.png "Include Docs")
-
-
-          h1#db-action Database Maintenance
-          :markdown
-            ** DB Maintenance**
-            ![DB Admin Menu](imgs/screenshots/db-admin1.png "DB Admin Menu")
-            This menu will allows you replicate the Database, and as well as delete it.
-            ![DB Admin Menu](imgs/screenshots/db-admin2.png "DB Admin Menu")
+              ![Included Docs](imgs/screenshots/editor6.png "Include Docs")
 
 
-            ** Replication Link **
-            Jump directly to the Replication page for this database.
-            ![Replicate a DB](imgs/screenshots/jumptoreplicate.png "Replicate a DB")
+          h1#db-action.sub Database Maintenance
+            :markdown
+              ** DB Maintenance**
+              ![DB Admin Menu](imgs/screenshots/db-admin1.png "DB Admin Menu")
+              This menu will allows you replicate the Database, and as well as delete it.
+              ![DB Admin Menu](imgs/screenshots/db-admin2.png "DB Admin Menu")
 
-            ** Permissions Link  **
-            Jump directly to the Permissions page for this database.
-            ![Jump to Permissions](imgs/screenshots/jumptopermissions.png "Jump to Permissions")
+
+              ** Replication Link **
+              Jump directly to the Replication page for this database.
+              ![Replicate a DB](imgs/screenshots/jumptoreplicate.png "Replicate a DB")
+
+              ** Permissions Link  **
+              Jump directly to the Permissions page for this database.
+              ![Jump to Permissions](imgs/screenshots/jumptopermissions.png "Jump to Permissions")
 
         div.chapter#setup
           :markdown
@@ -373,6 +373,7 @@ div#content.showSideBar
             The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
 
             ![Verify](imgs/screenshots/verify.png "Verify")
+        div#end1
 
   div#answers.section
     div#middleBar 
@@ -444,3 +445,4 @@ div#content.showSideBar
           channel
 
           [Apache Software Foundation](http://www.apache.org/) About the ASF
+      div#end2

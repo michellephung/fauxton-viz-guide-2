@@ -33,11 +33,29 @@ function jumpToAnchor () {
   }
 }
 
+function getOffset(el) {
+  el = el.getBoundingClientRect();
+  return {
+    left: el.left + window.scrollX,
+    top: el.top + window.scrollY
+  }
+}
+
 function scrollOnMiddleBarScrollsRightContent () {
+
   $('#content').scroll(function (e) {
     var top = $("#content").scrollTop();
-    $('#using-fauxton.shown #middleBar').css('padding-top', (top + 50) + 'px');
-    $('#answers.shown #middleBar').css('padding-top', (top + 50) + 'px');
+
+    var whereisend1 = getOffset(document.getElementById('end1')).top;
+    var whereisend2 = getOffset(document.getElementById('end2')).top;
+
+    $('#using-fauxton.shown #middleBar').css({
+      'padding-top': (top + 50) + 'px'
+    });
+
+    $('#answers.shown #middleBar').css({
+      'padding-top': (top + 50) + 'px'
+    });
   });
 
 }
@@ -60,19 +78,20 @@ function highlightFauxtonNavigation () {
   }
 
 function changeHashOnScroll() {
-  http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
+  //http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
   $('#content').scroll(function (e) {
+
     $('div.chapter').each(function () {
-        if (
-          $(this).offset().top < window.pageYOffset + 10
-          //begins before top
-          && $(this).offset().top + $(this).height() > window.pageYOffset + 10
-          //but ends in visible area
-          //+ 10 allows you to change hash before it hits the top border
-        ){
-          history.replaceState(undefined, undefined, "#" + $(this).attr('id'));
-          highlightFauxtonNavigation();
-        }
+      if (
+        $(this).offset().top < window.pageYOffset + 10
+        //begins before top
+        && $(this).offset().top + $(this).height() > window.pageYOffset + 10
+        //but ends in visible area
+        //+ 10 allows you to change hash before it hits the top border
+      ){
+        history.replaceState(undefined, undefined, "#" + $(this).attr('id'));
+        highlightFauxtonNavigation();
+      }
     });
   });
 }
