@@ -300,6 +300,28 @@ div#content.showSideBar
 
             ![Config](imgs/screenshots/config.png "Config")
 
+            # CORS
+
+            CORS stands for Cross Origin Resource Sharing. It is a setting that pertains only to browsers.
+
+            By enabling CORS, you allow other people, from their browsers, to access the data you have stored in your CouchDB databases.
+
+            They can ping your CouchDB instance through an AJAX request, and it will return information. Or they can POST data to your CouchDB instance, and CORS allows you to recieve that information.
+
+            For example, if your CouchDB installation is running on the domain alice.example you can ping someone else's CouchDB instance through an AJAX request from a different domain, e.g. bob.example - or even localhost!
+
+            But be careful - allowing any domain to access your data can be a security risk. If you only want certain websites (origins) to be able to retrieve and change data, you can set 'Restrict to specific domains', and then list which origins you want to allow access for.
+
+            By setting, 'All domains', you allow anyone from anywhere to ping your databases, and retrieve information that way.
+
+            If you disable CORS, the JavaScript that makes the AJAX request needs to run on the same domain. With CORS disabled frontend code that runs on alice.example must be also hosted on alice.example. Disabling CORS, means that no browser that pings your databases will recieve information.
+
+            You can also limit who can ping you. If you only want certain websites, or origins, to be able to recieve data from your stores, you can set 'Restrict to specific domains', and then list which origins you want to allow access.
+
+            This is a browser specific layer of protection, a second layer of protection, if you will. The first layer of protection comes from the permissions you set on each database using roles. (For more information, see [CouchDB Security](http://docs.couchdb.org/en/latest/api/database/security.html))
+            
+            ![CORS](imgs/screenshots/cors.png "CORS")
+
             For more details on configuration, see the
             [Configuring CouchDB](http://docs.couchdb.org/en/latest/config/index.html#config)
             section.
@@ -403,11 +425,6 @@ div#content.showSideBar
           a place that you think needs fixing, and find out how to fix it.
 
         :markdown
-          For example, if you find the documentation a long rabbit hole of 
-          links and links (and links and links....) you could come up with a
-          hierarchical system of links or strategy guide that would help out a
-          newbie.
-
           If you have design skills, or would like to learn architecture 
           skills, you can help out by finding a cumbersome or non-intuitive
           part of CouchDB and/or Fauxton and propose a fix. Good ideas are 
@@ -417,7 +434,7 @@ div#content.showSideBar
           better! If you find a place in CouchDB that is not well-documented,
           feel free!
 
-        p.question Q: I found a bug and I think it should be fixed!
+        p.question Q: I found a bug and I know how to fix it!!
         p.answer.
           A: Awesome! Open a pull request and we can make that happen!
 
@@ -436,7 +453,7 @@ div#content.showSideBar
           
           [CouchDB Wiki](http://wiki.apache.org/couchdb/)
 
-          [CoucDB: The Definitive Guide](http://guide.couchdb.org/index.html)
+          [CouchDB: The Definitive Guide](http://guide.couchdb.org/index.html)
 
           [CouchDB Tutorials](http://wiki.apache.org/couchdb/Basics) General and
           Tutorials for Specific Languages
