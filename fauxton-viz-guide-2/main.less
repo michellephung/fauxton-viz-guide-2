@@ -150,13 +150,15 @@ html, body {
   }
 }
 
-#middleBar {
+.middleBar {
   width: 255px;
   margin-left: 50px;
   padding-top: 50px;
   height: calc(100% ~"-" 100px);
   padding-bottom: 50px;
-  position: fixed;
+  float: left;
+  position: absolute;
+  
 
   .topic-image {
     height: 120px;
@@ -164,11 +166,6 @@ html, body {
   .section-title {
     font-weight: 300;
     color: #750f34;
-  }
-
-  #using-fauxton &, #answers & {
-    float: left;
-    position: absolute;
   }
 }
 

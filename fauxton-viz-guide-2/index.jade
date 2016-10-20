@@ -17,7 +17,7 @@ div#content.showSideBar
   div#hamburger.showSideBar
     i(aria-hidden="true").fa.fa-bars
   div#getting-started.section.shown
-    div#middleBar
+    div.middleBar
       img(src='imgs/getting-started-light.png').topic-image
       div.section-title GETTING STARTED
     div#rightContent
@@ -42,8 +42,9 @@ div#content.showSideBar
           a(href='http://docs.couchdb.org/en/latest/install/index.html') here
           span , then go to 
           a(href='http://127.0.0.1:5984/_utils') http://127.0.0.1:5984/_utils
+      div#end-getting-started
   div#using-fauxton.section
-    div#middleBar
+    div.middleBar
       img(src='imgs/using-fauxton-light.png').topic-image
       div.section-title USING FAUXTON
       div.fauxton-toc
@@ -395,10 +396,10 @@ div#content.showSideBar
             The Verify Installation allows you to check whether all of the components of your CouchDB installation are correctly installed.
 
             ![Verify](imgs/screenshots/verify.png "Verify")
-        div#end1
+        div#end-using-fauxton
 
   div#answers.section
-    div#middleBar 
+    div.middleBar 
       img(src='imgs/answers-light.png').topic-image
       div.section-title Answers
     div#rightContent 
@@ -462,4 +463,4 @@ div#content.showSideBar
           channel
 
           [Apache Software Foundation](http://www.apache.org/) About the ASF
-      div#end2
+      div#end-answers

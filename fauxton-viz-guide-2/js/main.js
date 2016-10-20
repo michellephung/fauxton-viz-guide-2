@@ -44,19 +44,36 @@ function getOffset(el) {
 function scrollOnMiddleBarScrollsRightContent () {
 
   $('#content').scroll(function (e) {
-    var top = $("#content").scrollTop();
+    var top = $('#content').scrollTop();
+    
+    var amountVisibleOnPage = getAmountofContentVisibleOnPage();
 
-    var whereisend1 = getOffset(document.getElementById('end1')).top;
-    var whereisend2 = getOffset(document.getElementById('end2')).top;
 
-    $('#using-fauxton.shown #middleBar').css({
-      'padding-top': (top + 50) + 'px'
-    });
-
-    $('#answers.shown #middleBar').css({
-      'padding-top': (top + 50) + 'px'
-    });
+    if (amountVisibleOnPage > 250) { 
+      // if the end is 250px on the page, scroll
+      $('.middleBar').css({
+        'padding-top': (top + 50) + 'px'
+      });
+    } 
   });
+
+}
+
+function getAmountofContentVisibleOnPage () {
+
+  var hash = window.location.hash;
+
+  switch (hash) {
+    case '' : 
+    case '#getting-started' : 
+      return getOffset(document.getElementById('end-getting-started')).top;
+    case '#using-fauxton' : 
+      return getOffset(document.getElementById('end-using-fauxton')).top;
+    case '#answers' :
+      return getOffset(document.getElementById('end-answers')).top;
+    default:
+      return getOffset(document.getElementById('end-using-fauxton')).top;
+  }
 
 }
 
@@ -185,6 +202,7 @@ function clickSidebarItemListener () {
       });
     $('.section.' + sectionChosen + ' .large-icon')
       .css('background-image', 'url("imgs/'+ sectionChosen +'-dark.png")');
+    $( ".middleBar" ).css('padding-top', '50px');
   });
 
   //makes the CSS default
