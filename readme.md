@@ -13,7 +13,7 @@ TO DO:
   - ~~[BUG]Using Fauxton page, need to highlight/ the submenus in nav when you scroll/ click~~
   - ~~[BUG]Using Fauxton page, scrolls forever~~
   - ~~[BUG]Using Fauxton page, middle navigation (toc) broken after you scroll on it a bit, then leave & return to 'Using Fauxton' section~~
-  - not working in FF/Safari >.< !!!
-  - 
-  - Add left/right arrow
+  - end of long scroll doesn't always highlight nav correctly because page is too short
+  - navigation highlighting doesn't work consistently on middle bar
+  - Add left/right arrows
   - Add animations!!!

@@ -8,7 +8,6 @@ $(document).ready(function(){
   jumpToAnchor();
   detectHashChange();
   changeHashOnScroll();
-  scrollOnMiddleBarScrollsRightContent();
 });
 
 function jumpToAnchor () {
@@ -41,30 +40,6 @@ function getOffset(el) {
   }
 }
 
-function scrollOnMiddleBarScrollsRightContent () {
-
-  // $('#content').scroll(function (e) {
-  //   // var top = $('#content').scrollTop();
-    
-  //   // var amountVisibleOnPage = getAmountofContentVisibleOnPage();
-
-
-
-
-  //   // if (amountVisibleOnPage > 250) { 
-  //   //   // if the end is 250px on the page, scroll
-
-  //   //   // $('.middleBar').css({
-  //   //   //   'padding-top': (top + 50) + 'px'
-  //   //   // });
-  //   // } 
-  //   // console.log('scroll');
-  //   // $('.middleBar').css({
-  //   //   'pointer-events': 'none'
-  //   // });
-  // });
-}
-
 function getAmountofContentVisibleOnPage () {
 
   var hash = window.location.hash;
@@ -80,7 +55,6 @@ function getAmountofContentVisibleOnPage () {
     default:
       return getOffset(document.getElementById('end-using-fauxton')).top;
   }
-
 }
 
 function highlightFauxtonNavigation () {
@@ -105,7 +79,6 @@ function changeHashOnScroll() {
   
   var timer = null;
   $(window).scroll(function (e) {
-
     $('div.chapter').each(function () {
       if (
         $(this).offset().top < window.pageYOffset + 10
@@ -115,13 +88,8 @@ function changeHashOnScroll() {
         //+ 20 allows you to change hash before it hits the top border
       ){
 
-        clearTimeout( timer );
-        timer = setTimeout( function() {
-           history.replaceState(null, null, "#" + $(this).attr('id'));
-                   highlightFauxtonNavigation();
-        }.bind(this), 100 );
-
-
+        history.replaceState(null, null, "#" + $(this).attr('id'));
+        highlightFauxtonNavigation();
 
         if ($('#_all_dbs').visible(true)) {
           clear();
