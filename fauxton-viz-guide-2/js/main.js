@@ -44,18 +44,24 @@ function getOffset(el) {
 function scrollOnMiddleBarScrollsRightContent () {
 
   $('#content').scroll(function (e) {
-    var top = $('#content').scrollTop();
+    // var top = $('#content').scrollTop();
     
-    var amountVisibleOnPage = getAmountofContentVisibleOnPage();
+    // var amountVisibleOnPage = getAmountofContentVisibleOnPage();
 
 
-    if (amountVisibleOnPage > 250) { 
-      // if the end is 250px on the page, scroll
 
-      // $('.middleBar').css({
-      //   'padding-top': (top + 50) + 'px'
-      // });
-    } 
+
+    // if (amountVisibleOnPage > 250) { 
+    //   // if the end is 250px on the page, scroll
+
+    //   // $('.middleBar').css({
+    //   //   'padding-top': (top + 50) + 'px'
+    //   // });
+    // } 
+
+    $('.middleBar').css({
+      'pointer-events': 'none'
+    });
   });
 
 }
@@ -114,9 +120,8 @@ function changeHashOnScroll() {
         clearTimeout( timer );
         timer = setTimeout( function() {
            history.replaceState(0, 0, "#" + $(this).attr('id'));
-        }.bind(this), 1000 );
-        
-        highlightFauxtonNavigation();
+           highlightFauxtonNavigation();
+        }.bind(this), 100 );
 
         if ($('#_all_dbs').visible(true)) {
           clear();
