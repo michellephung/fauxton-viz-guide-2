@@ -51,9 +51,10 @@ function scrollOnMiddleBarScrollsRightContent () {
 
     if (amountVisibleOnPage > 250) { 
       // if the end is 250px on the page, scroll
-      $('.middleBar').css({
-        'padding-top': (top + 50) + 'px'
-      });
+
+      // $('.middleBar').css({
+      //   'padding-top': (top + 50) + 'px'
+      // });
     } 
   });
 
@@ -96,6 +97,9 @@ function highlightFauxtonNavigation () {
 
 function changeHashOnScroll() {
   //http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
+  
+  var timer = null;
+
   $('#content').scroll(function (e) {
 
     $('div.chapter').each(function () {
@@ -106,7 +110,12 @@ function changeHashOnScroll() {
         //but ends in visible area
         //+ 10 allows you to change hash before it hits the top border
       ){
-        history.replaceState(undefined, undefined, "#" + $(this).attr('id'));
+
+        clearTimeout( timer );
+        timer = setTimeout( function() {
+           history.replaceState(0, 0, "#" + $(this).attr('id'));
+        }.bind(this), 1000 );
+        
         highlightFauxtonNavigation();
 
         if ($('#_all_dbs').visible(true)) {
