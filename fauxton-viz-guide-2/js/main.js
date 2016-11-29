@@ -43,27 +43,26 @@ function getOffset(el) {
 
 function scrollOnMiddleBarScrollsRightContent () {
 
-  $('#content').scroll(function (e) {
-    // var top = $('#content').scrollTop();
+  // $('#content').scroll(function (e) {
+  //   // var top = $('#content').scrollTop();
     
-    // var amountVisibleOnPage = getAmountofContentVisibleOnPage();
+  //   // var amountVisibleOnPage = getAmountofContentVisibleOnPage();
 
 
 
 
-    // if (amountVisibleOnPage > 250) { 
-    //   // if the end is 250px on the page, scroll
+  //   // if (amountVisibleOnPage > 250) { 
+  //   //   // if the end is 250px on the page, scroll
 
-    //   // $('.middleBar').css({
-    //   //   'padding-top': (top + 50) + 'px'
-    //   // });
-    // } 
-
-    $('.middleBar').css({
-      'pointer-events': 'none'
-    });
-  });
-
+  //   //   // $('.middleBar').css({
+  //   //   //   'padding-top': (top + 50) + 'px'
+  //   //   // });
+  //   // } 
+  //   // console.log('scroll');
+  //   // $('.middleBar').css({
+  //   //   'pointer-events': 'none'
+  //   // });
+  // });
 }
 
 function getAmountofContentVisibleOnPage () {
@@ -105,8 +104,7 @@ function changeHashOnScroll() {
   //http://stackoverflow.com/questions/5315659/jquery-change-hash-fragment-identifier-while-scrolling-down-page
   
   var timer = null;
-
-  $('#content').scroll(function (e) {
+  $(window).scroll(function (e) {
 
     $('div.chapter').each(function () {
       if (
@@ -114,14 +112,16 @@ function changeHashOnScroll() {
         //begins before top
         && $(this).offset().top + $(this).height() > window.pageYOffset + 10
         //but ends in visible area
-        //+ 10 allows you to change hash before it hits the top border
+        //+ 20 allows you to change hash before it hits the top border
       ){
 
         clearTimeout( timer );
         timer = setTimeout( function() {
-           history.replaceState(0, 0, "#" + $(this).attr('id'));
-           highlightFauxtonNavigation();
+           history.replaceState(null, null, "#" + $(this).attr('id'));
+                   highlightFauxtonNavigation();
         }.bind(this), 100 );
+
+
 
         if ($('#_all_dbs').visible(true)) {
           clear();
@@ -241,6 +241,7 @@ function clickSidebarItemListener () {
 function usingFauxtonNavigationListener () {
   $('#using-fauxton .toc a, .fauxton-toc .icon-menu a').click(function (e) {
     clearAll();
+    console.log('f');
 
     if ($(this).hasClass('subheading')) {
       e.stopPropagation();
