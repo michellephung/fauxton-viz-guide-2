@@ -131,7 +131,6 @@ html, body {
     color: #750f34;
     font-size: 20px;
 
-
     -webkit-transition: left 0.5s, width 0.5s;
     -moz-transition: left 0.5s, width 0.5s;
     -o-transition: left 0.5s, width 0.5s;
@@ -159,7 +158,6 @@ html, body {
   float: left;
   position: absolute;
   
-
   .topic-image {
     height: 120px;
   }
@@ -175,7 +173,7 @@ html, body {
   -khtml-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
- user-select: text;
+  user-select: text;
 
   width: calc(100% ~"-" 360px);
   padding-left: 300px;
@@ -215,7 +213,16 @@ html, body {
     width: 200px;
     vertical-align: middle;
   }
+
+  a {
+    color: black;
+    
+    &:hover{
+      color: darkgray;
+    }
+  }
 }
+
 #using-fauxton {
   #rightContent {
     .chapter {
@@ -236,6 +243,7 @@ html, body {
     }
   }
 }
+
 .fauxton-toc {
   margin-top: 40px;
 
@@ -322,7 +330,6 @@ html, body {
         padding-left: 19px;
       }
       
-
       &:hover {
         font-weight: bold;
         color: black;
