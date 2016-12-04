@@ -15,5 +15,6 @@ TO DO:
   - ~~[BUG]Using Fauxton page, middle navigation (toc) broken after you scroll on it a bit, then leave & return to 'Using Fauxton' section~~
   - end of long scroll doesn't always highlight nav correctly because page is too short
   - navigation highlighting doesn't work consistently on middle bar
+  - add target=blank to some of the links
   - Add left/right arrows
   - Add animations!!!
