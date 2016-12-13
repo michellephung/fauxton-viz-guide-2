@@ -19,6 +19,8 @@ TO DO:
   - visual guide on how to npm install Fauxton
   - write up on how to set up development environment
   - favicon scrolly issue
+  - answers page auto scroll to top
+  - new replication page pictures
   - add target=blank to some of the links
   - Add left/right arrows
   - Add animations!!!
